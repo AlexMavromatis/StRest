@@ -9,7 +9,17 @@
       <div class="modal-body">
         <center>
           
+       <h2>Thank you for using this framework</h2>     
+
           
+
+	For the monte carlo simulation 
+
+--------------------------------------------------
+
+As input is needed the simulation size and ktlp
+
+        
         </center>
       </div>
       <div class="modal-footer">
