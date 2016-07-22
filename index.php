@@ -1,5 +1,5 @@
 <?php
-require 'DbConnect.php';
+require 'lib/DbConnect.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,7 +27,7 @@ require 'DbConnect.php';
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#benefits" class="nav-link">Stress Tests Framework</a></li>
-            <li><a href="Register" >Create Portofolio</a></li>
+            <li><a href="lib/Register" >Create Portofolio</a></li>
             <li><a href="#about" class="nav-link">About</a></li>
             <li><a  href="#" data-toggle="modal" data-target="#login" >Sing in</a></li>
           </ul>
@@ -39,7 +39,7 @@ require 'DbConnect.php';
       <div class="container">
         <h1>Bank Stress Test Framework</h1>
         <h2>This is the Dissertation of Alex Mavromatis a web servise simulator for bank stress testing.</h2>
-        <p><a class="btn btn-warning btn-lg" href="test2">Start Stress Test <span class="glyphicon glyphicon-circle-arrow-right"></span></a></p>
+        <p><a class="btn btn-warning btn-lg" href="lib/test2">Start Stress Test <span class="glyphicon glyphicon-circle-arrow-right"></span></a></p>
       </div> <!-- /.container -->
     </div> <!-- /.jumbotron -->
 
@@ -131,6 +131,6 @@ require 'DbConnect.php';
         link.closest(".navbar").find(".navbar-toggle:not(.collapsed)").click();
       });
     </script>
-<?php require_once "loginFrame.php"?>
+<?php require_once "lib/loginFrame.php"?>
   </body>
 </html>
