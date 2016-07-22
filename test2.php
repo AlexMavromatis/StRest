@@ -69,28 +69,33 @@ li a:hover {
 
       <div class="panel-heading"><center><h4>Stress Testing Panel</h4></center></div>
       <div class="panel-body"><form>
-   <div class="right">First name: <input type="text" id="first"  class="form-control" style="width: 160px">
+   <div class="right">
             
-      First name: <input type="text" id="second"  class="form-control" style="width: 160px">
-            
-      First name: <input type="text" id="third"  class="form-control" style="width: 160px">
+      Capital Adequacy Evaluation: <input type="text" id="shareEquity"  class="form-control" style="width: 160px">
+      Asset Quality Evaluation: <input type="text" id="third"  class="form-control" style="width: 160px">
        
             
-      First name: <input type="text" id="second"  class="form-control" style="width: 160px">
+      Management Evaluation: <input type="text" id="second"  class="form-control" style="width: 160px">
             
-      First name: <input type="text" id="third"  class="form-control" style="width: 160px"></div>
-    
+      Earnings Evaluation: <input type="text" id="third"  class="form-control" style="width: 160px">
+      Liquidity Evaluation: <input type="text" id="third"  class="form-control" style="width: 160px"></div>
  
-      <div class="left">First name: <input type="text" id="first"  class="form-control" style="width: 160px">
-            
-      First name: <input type="text" id="second"  class="form-control" style="width: 160px">
-            
-      First name: <input type="text" id="third"  class="form-control" style="width: 160px">
-       First name: <input type="text" id="first"  class="form-control" style="width: 160px">
-            
-      First name: <input type="text" id="second"  class="form-control" style="width: 160px">
-            
-      First name: <input type="text" id="third"  class="form-control" style="width: 160px"></div>
+      <div class="left">
+
+Please select sensitivity Scenario:
+       <select class="form-control" id="scenario" style="width: 160px">
+       <option value="Standard">Standard</option>
+       <option value="medium">Medium</option>
+       <option value="Extreme">Extreme</option>
+       </select>
+</br>
+	Please input Risk weigheted Assets: <input type="text" id="RiskwAssets"  class="form-control" style="width: 160px">
+    </br>        
+     Please input Shareholders Equity: <input type="text" id="shareEquity"  class="form-control" style="width: 160px" 
+>            
+</br>    
+ Please input Retained Earnings: <input type="text" id="RetainedEarnings"  class="form-control" style="width: 160px">
+      </div>
        <div class="middle">
        Capital Adequacy: <input type="text" id="first"  class="form-control" style="width: 160px">
             
@@ -101,13 +106,7 @@ li a:hover {
             
       Liquidity: <input type="text" id="second"  class="form-control" style="width: 160px">
             
-      Sensitivity select Scenario:
-       <select class="form-control" style="width: 160px">
-       <option value="Standard">Standard</option>
-       <option value="medium">Medium</option>
-       <option value="Extreme">Extreme</option>
-       </select>
-
+    
           </form>
           </br>
 
