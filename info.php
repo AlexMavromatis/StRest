@@ -14,10 +14,15 @@
           
 
 	For the monte carlo simulation 
-
 --------------------------------------------------
+For the monte carlo simulation we need your banks Risk weightet Assets,
+the Shareholders Equity and the Retained Earnings. Please make sure to
+select the scenario in which your bank will be tested.
 
-As input is needed the simulation size and ktlp
+	For the CAMEL rating system
+--------------------------------------------------
+For your evaluation through the CAMEL system we need the Capital Adequacy
+the Asset Quality the 
 
         
         </center>
