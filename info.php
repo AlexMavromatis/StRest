@@ -22,7 +22,7 @@ select the scenario in which your bank will be tested.
 	For the CAMEL rating system
 --------------------------------------------------
 For your evaluation through the CAMEL system we need the Capital Adequacy
-the Asset Quality the 
+the Asset Quality the and the rest 
 
         
         </center>
