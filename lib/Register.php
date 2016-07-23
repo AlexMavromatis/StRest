@@ -38,7 +38,7 @@
       <div class="well">
 
             <center><h3>Create a Profile</h3></center>
-           <center> <form class="form-signin"  data-toggle="validator" role="form" action="InitBank.php" method="post" style="width: 500px">
+           <center> <form class="form-signin"  data-toggle="validator" role="form" action="InitBank" method="post" style="width: 500px">
             <label for="usr">Bank Name:</label>
             <input type="text" class="form-control" name="Bname" placeholder="Your Bank Name Here" required="">
             </br>

@@ -7,16 +7,16 @@
         <center><h4 class="modal-title" id="myModalLabel">Login To Your System</h4></center>
       </div>
       <div class="modal-body">
-        <center><form class="form-signin" style="width: 400px" method="post" action="userAuth.php">
-        <h2 class="form-signin-heading">Please isgn in</h2>
-        <label for="inputEmail" class="sr-only"E>mail address</label>
+        <center><form class="form-signin" style="width: 400px" method="post" action="lib/userAuth">
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <label for="inputEmail" class="sr-only">Email address</label>
         <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="mail" required autofocus style="width: 350px">
         </br>
         <label for="inputPassword" class="sr-only">Password</label>
         <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required style="width: 350px">
         <div class="checkbox">
           <label>
-            <input type="checkbox" value="remember-me"> Remember me
+            <input type="checkbox" value="remember-me"> Remember me</input>
           </label>
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit" style="width: 300px">Sign in</button>
