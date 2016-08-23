@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    require "DbConnect.php";
+    $conn  = DbConnect();
+    $uid   = $_SESSION['userID'];
+    require  "GetUserData.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -27,43 +34,41 @@
       </div> <!-- /.container -->
     </nav> <!-- /.navbar -->
 
+
+
     <div class="container">
 </br></br></br></br>
-      <h3 id="benefits" class="subhead">Welcome to the Framework</h3>
-      <div class="row">
+      <h3 id="benefits" class="subhead">User Interface</h3>
+  
       <div class="well">
-
-            <center><h3>Create a Profile</h3></center>
-           <center> <form class="form-signin"  data-toggle="validator" role="form" action="InitBank" method="post" style="width: 500px">
-            <label for="usr">Bank Name:</label>
-            <input type="text" class="form-control" name="Bname" placeholder="Your Bank Name Here" required="">
-            </br>
-            <label for="usr">Country of origin:</label>
-            <input type="text" class="form-control" name="Country" placeholder="Your Country" required="">
-            </br>
-            <label for="usr">Year established:</label>
-            <input type="text" class="form-control" name="year" placeholder="Year established" required="">
-            </br>
-            <label for="usr">Headquarters:</label>
-            <input type="text" class="form-control" name="HDcity" placeholder="Headquartes City" required="">
-             </br>
-            <label for="usr">Email:</label>
-            <input type="text" class="form-control" name="mail" placeholder="Email" required="">
-              </br>
-            <label for="usr">Password:</label>
-            <input type="password" class="form-control" id="pass" name="password" placeholder="Password" required="">
-            </br>
-            <label for="usr">Repeat Password:</label>
-            <input type="password" class="form-control" name="confirm" id="cpass"  placeholder="Confirm your Password" required="">
-            </br>
-            <input class="btn btn-info" type="submit" name="submit" value="Create Profile"/>
-            </form></center>
-           <div>
+        <?php
+        $result = GetUserData($conn,$uid);
+         echo '<div class="table table-hover">';
+         echo '<table class="table">';
+         echo '<thead>';
+         echo '<tr>';
+         echo '<th>Bank Name</th>';
+         echo '<th>Bank Country</th>';
+         echo '<th>Bank Headquarters</th>';
+         echo '<th>Email</th>';
+         echo '</tr>';
+         echo '</thead>';
+         echo '<tbody>';
+         echo '<tr>';
+         echo '<th>'.$result['Name'].'</th>';
+         echo '<th>'.$result['Country'].'</th>';
+         echo '<th>'.$result['Headquarters'].'</th>';
+         echo '<th>'.$result['Email'].'</th>';
+         echo '</tr>';
+         echo '</tbody>';
+         echo '</table>';
+         echo '</div>';
+        ?>
+   
         </div> <!-- /.benefit -->
 
-    </div></div> <!-- /.container -->
-</br></br></br></br></br></br></br></br></br></br>
-
+    </div> <!-- /.container -->
+</div>
     <footer>
       <div class="container clearfix">
         <p class="pull-left">

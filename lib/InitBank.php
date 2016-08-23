@@ -32,12 +32,12 @@ $create = $query->execute(array(
 		":password"   => $password
 	));
 
-	header("Location: Welcome.php");
+	header("Location: userInterface");
 	die();
 
 }else{
 
-	header("Location: Wrong.php");
+	header("Location: Error404");
 	die();
 
 }

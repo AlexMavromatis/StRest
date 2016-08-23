@@ -1,5 +1,6 @@
 <?php
 require 'lib/DbConnect.php';
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,9 +28,9 @@ require 'lib/DbConnect.php';
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#benefits" class="nav-link">Stress Tests Framework</a></li>
-            <li><a href="lib/Register" >Create Portofolio</a></li>
+            <?php  if(!isset($_SESSION['userID'])) { echo '<li><a href="lib/Register" >Create Portofolio</a></li>'; } else { echo '<li><a href="lib/UserInterface" >View Portofolio</a></li>'; }?> 
             <li><a href="#about" class="nav-link">About</a></li>
-            <li><a  href="#" data-toggle="modal" data-target="#login" >Sing in</a></li>
+            <?php  if(!isset($_SESSION['userID'])) { echo '<li><a  href="#" data-toggle="modal" data-target="#login" >Sing in</a></li>'; } else { echo '<li><a  href="lib/signout" >Sing out</a></li>'; }?>
           </ul>
         </div> <!-- /.navbar-collapse -->
       </div> <!-- /.container -->

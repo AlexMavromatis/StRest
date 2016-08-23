@@ -14,7 +14,7 @@
 	font-family:constantia;
 	}
   div.panel-primary {
-    width: 800px;
+    width: 900px;
   }
 div.middle {
     display: block;
@@ -32,7 +32,7 @@ div.middle {
 ul {
     list-style-type: none;
     margin: 0;
-    padding: 0;
+    padding: 0,0,2,0;
     overflow: hidden;
     background-color: #333;
 }
@@ -63,8 +63,10 @@ li a:hover {
   <li><a class="active" href="#"> <input class="btn btn-primary" type="button" onclick="window.simple()" value="Run Simulation"></a></li>
   <li><a href="#"><button id="button"  class="btn btn-primary" >Export Monte Carlo</button></a></li>
   <li><a href="#"><button id="button2"  class="btn btn-primary" >Export CAMEL</button></a></li>
-  <li><a href="#"><button id="button2"  class="btn btn-primary" >Save simulation</button></a></li>
+  <li><a href="#"><button id="button2"  class="btn btn-primary" >Save Simulation</button></a></li>
   <li><a href="#" data-toggle="modal" data-target="#info"><button id="button2"  class="btn btn-primary" >Info</button></a></li>
+  <li><a href="../index" ><button class="btn btn-primary" >Go Back</button></a></li>
+
 </ul>
 
       <div class="panel-heading"><center><h4>Stress Testing Panel</h4></center></div>
