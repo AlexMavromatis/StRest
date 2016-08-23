@@ -1,0 +1,47 @@
+
+  div.panel-primary {
+    width:1000px;
+  }
+div.middle {
+    display: block;
+    overflow:hidden;
+}
+  div.left{
+    float: left;
+  }
+  div.right{
+    float: right;
+  }
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0,0,0,0;
+    overflow: hidden;
+    background-color: #333;
+}
+li {
+    float: left;
+    margin: 0 10px;
+}
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 12px;
+    text-decoration: none;
+}
+li a:hover {
+    background-color: #111;
+}
+
+body{
+	font-family:constantia;
+	font-size:1.5em;
+}
+
+input[type="text"] {
+    width: 300px;
+}
+
+

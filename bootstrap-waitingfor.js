@@ -50,7 +50,7 @@
 			}
 			var settings = $.extend({
 				
-				headerText: 'Stress Testing',
+				headerText: '<center>Running Monte Carlo Simulation</center>',
 				headerSize: 3,
 				headerClass: '',
 				dialogSize: 'm',
