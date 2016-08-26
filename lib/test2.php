@@ -42,7 +42,7 @@
        
        General CAMEL Evaluation: <input type="text"  id="third"  class="form-control"  readonly></br>
        
-       Stress Test Outcome: <input type="text"  id="third"  class="form-control"  readonly></br>
+       Stress Test Outcome: <input type="text"  id="StressPass"  class="form-control"  readonly></br>
        
        <input type="submit" id="submit" class="btn btn-primary" value="Save Simulation" />
        </form>

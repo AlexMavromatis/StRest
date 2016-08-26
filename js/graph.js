@@ -11,7 +11,7 @@
 			waitingDialog.hide();
 			chart();
 			chart2();
-			montecarlo();
+			CAMEL();
 			}
             if(e.message){
                waitingDialog.message(e.message)
@@ -23,31 +23,45 @@
     });
     }
     
-   function montecarlo(){
+   function CAMEL(){
 	   var MonteCarlo = [];
+	   var Tier1;
+	   var Tier2;
+	   var TotalTier;
 	   var ShareHequity = parseInt(document.getElementById("ShareholdersEQ").value);
-	   var Scenario  = document.getElementById("scenario").value;
-	   var shareEquityEval= document.getElementById("shareEquity");
-	   if (Scenario=="Standard"){
-	   var randomnumber = Math.floor(Math.random() * (200 - 1 + 1)) + 1;
-   }
-	   for (i=1; i<5000; i++){
+	   var RetainedEarnings = parseInt(document.getElementById("RetainedEarnigs").value);
+	   var RiskWassets = parseInt(document.getElementById("RiskwAssets").value);
+	   var TotalCapital = parseInt(document.getElementById("TotalCapital").value);
+	   var CamelC;
+
+	   Tier1=  (ShareHequity+RetainedEarnings)/RiskWassets;
+	   Tier2=   TotalCapital/RiskWassets;
+	   TotalTier = Tier1+Tier2;
+	   CamelC = (Tier1-Tier2)/RiskWassets;
+	   alert(CamelC);
+	   if (TotalTier>0.08){
+		   StressPass.value= "Passed"
+		   }else {
+				StressPass.value= "Failed"
+			}
 		   
-		   MonteCarlo[i]= randomnumber * ShareHequity;
-		   
-		   
-		   }
-	   var k = MonteCarlo[50];
-	   alert(randomnumber);
-	   if(ShareHequity<1000000){
-	   shareEquity.value= 2;
-	   }else if(ShareHequity>1000000){
-		   	   shareEquity.value= 3;
+	   if (CamelC >= 0.08){
+	   
+	   shareEquity.value= 3;	   
+	   
+	 }else if (CamelC>=0.1){
+		 
+	   shareEquity.value= 2;	   
+		 }else if (CamelC>=0.18){
+		 
+	   shareEquity.value= 1;	   
+		 }
+
 
 		   
 		   
 		   }
-	   }
+	   
 
     function chart() { 
         var f    = parseInt(document.getElementById("IncomeRate").value);
@@ -107,6 +121,9 @@
 });}
 
 function chart2(){
+	var t1=23;
+	var t2=14;
+	var t3=19;
 $(function () {
     $('#container2').highcharts({
         chart: {
@@ -155,7 +172,7 @@ $(function () {
                 marker: {
                     symbol: 'url(https://www.highcharts.com/samples/graphics/snow.png)'
                 }
-            }, 2, 4, 6, 8, 10, 12, 18, 10, 8, 6, 4.2]
+            }, t3, 4, 6, 8, 10, t2, 18, t1, 8, 6, 4.2]
         }]
     });
 });
