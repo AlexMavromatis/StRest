@@ -38,7 +38,7 @@
 	   Tier2=   TotalCapital/RiskWassets;
 	   TotalTier = Tier1+Tier2;
 	   CamelC = (Tier1-Tier2)/RiskWassets;
-	   alert(CamelC);
+	
 	   if (TotalTier>0.08){
 		   StressPass.value= "Passed"
 		   }else {

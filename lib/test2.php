@@ -30,20 +30,27 @@
       <div class="right">
        <form method="post" action="saveSimulation.php">
 		   
-       Capital Adequacy Evaluation: <input type="text" id="shareEquity" name="shareEquityEval"  class="form-control"  readonly></br>
+       Capital Adequacy Evaluation: <input type="text" id="shareEquity" name="shareEquityEval"  class="form-control"  readonly>
       
-       Asset Quality Evaluation: <input type="text" id="third"  class="form-control"  readonly></br>
+       Asset Quality Evaluation: <input type="text" id="third"  class="form-control"  readonly>
             
-       Management Evaluation: <input type="text" id="second"  class="form-control" readonly></br>
+       Management Evaluation: <input type="text" id="second"  class="form-control" readonly>
             
-       Earnings Evaluation: <input type="text"   id="third"  class="form-control"  readonly></br>
+       Earnings Evaluation: <input type="text"   id="third"  class="form-control"  readonly>
        
-       Liquidity Evaluation: <input type="text"  id="third"  class="form-control"  readonly></br>
+       Liquidity Evaluation: <input type="text"  id="third"  class="form-control"  readonly>
        
-       General CAMEL Evaluation: <input type="text"  id="third"  class="form-control"  readonly></br>
+       General CAMEL Evaluation: <input type="text"  id="third"  class="form-control"  readonly>
        
-       Stress Test Outcome: <input type="text"  id="StressPass"  class="form-control"  readonly></br>
+       Stress Test Outcome: <input type="text"  id="StressPass"  class="form-control"  readonly>
        
+       Probability of Success: <input type="text"  id="StressSuccessProb"  class="form-control"  readonly>
+      
+       Probability of Failure: <input type="text"  id="StressFailureProb"  class="form-control"  readonly>
+
+	   Max Drawdown: <input type="text"  id="Drawdown"  class="form-control"  readonly>
+	   
+       </br>
        <input type="submit" id="submit" class="btn btn-primary" value="Save Simulation" />
        </form>
        
@@ -130,20 +137,44 @@
 
 
  <div class="panel panel-warning">
-      <div class="panel-heading">Monte Carlo Graphical Representation</div>
+      <div class="panel-heading">Monte Carlo Graphical Representation Pie Chart</div>
       <div class="panel-body"><div id="container" style="height: 400px"></div>
-</div>
-    </div>
+</div></div>
+   
+    
     <div class="panel panel-warning">
-      <div class="panel-heading">D'Alambert Methodology Graphical Representation</div>
+      <div class="panel-heading">Monte Carlo Methodology Graphical Representation Scatter Plot</div>
       <div class="panel-body"><div id="container" style="height: 400px"></div>
-</div>
-    </div> 
+</div></div>
+    
     
  <div class="panel panel-warning">
-      <div class="panel-heading">Panel with panel-warning class</div>
+      <div class="panel-heading">CAMEL BANK Rating Graphical Representation</div>
+      <div class="panel-body"><div id="container2" style="height: 400px"></div>
+  </div></div>
+  
+ <div class="panel panel-warning">
+      <div class="panel-heading">CAMEL BANK Rating Graphical Representation and Comparison with Best Ranking</div>
+      <div class="panel-body"> <div id="container2" style="height: 400px"></div></div></div>
+
+
+ <div class="panel panel-warning">
+      <div class="panel-heading">Probability of Success Graphical Representation</div>
       <div class="panel-body">    
-<div id="container2" style="height: 400px"></div>
+<div id="container2" style="height: 400px"></div></div></div>
+
+
+ <div class="panel panel-warning">
+      <div class="panel-heading">Probability of Failure Graphical Representation</div>
+      <div class="panel-body">    
+<div id="container2" style="height: 400px"></div></div></div>
+
+
+ <div class="panel panel-warning">
+      <div class="panel-heading">Drawdown of Assets Graphical Representation</div>
+      <div class="panel-body">    
+<div id="container2" style="height: 400px"></div></div></div>
+
 
 </div>
     </div>
