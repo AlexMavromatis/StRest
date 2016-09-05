@@ -32,33 +32,57 @@
 	   var RetainedEarnings = parseInt(document.getElementById("RetainedEarnigs").value);
 	   var RiskWassets = parseInt(document.getElementById("RiskwAssets").value);
 	   var TotalCapital = parseInt(document.getElementById("TotalCapital").value);
+	   var TotalAssets = parseInt(document.getElementById("TotalAssets").value);
 	   var CamelC;
-
+	   var CamelC2;
+	   var CAR;
+	   
 	   Tier1=  (ShareHequity+RetainedEarnings)/RiskWassets;
 	   Tier2=   TotalCapital/RiskWassets;
 	   TotalTier = Tier1+Tier2;
-	   CamelC = (Tier1-Tier2)/RiskWassets;
-	
-	   if (TotalTier>0.08){
+	   CamelC  = (Tier1-Tier2)/RiskWassets;
+	   CamelC2 = TotalCapital/TotalAssets;
+	   CAR = (CamelC+CamelC2)*1000;
+	   
+	   if (TotalTier>8){
 		   StressPass.value= "Passed"
 		   }else {
 				StressPass.value= "Failed"
 			}
 		   
-	   if (CamelC >= 0.08){
+
+	 camel:  if (CAR <= 18 || TotalTier<8){
 	   
-	   shareEquity.value= 3;	   
-	   
-	 }else if (CamelC>=0.1){
+		 shareEquity.value= 5;	   
+	     break camel;
+		
+		 }else if (CAR <= 23){
 		 
-	   shareEquity.value= 2;	   
-		 }else if (CamelC>=0.18){
+			shareEquity.value= 4;	  
+			 
+		 }else if (CAR<= 28){
 		 
-	   shareEquity.value= 1;	   
-		 }
+			shareEquity.value=3;
+				   
+		 }else if (CAR <= 33){
+			
+			shareEquity.value= 2;	   
+			
+		 }else if (CAR<=38){
+				 if (CAR==33){
+     		shareEquity.value= 1.4;	   
+		 }else if (CAR > 34 && CAR<37){
+			shareEquity.value= 1.4;	  
+			}else if (CAR>37){
+			shareEquity.value= 1;	  
+				}
+		 }else{
+	
+	   		shareEquity.value= "OOps Something went wrong";  
+					 }
 
 
-		   
+		   alert(CAR);
 		   
 		   }
 	   
