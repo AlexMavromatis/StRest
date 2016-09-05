@@ -24,19 +24,24 @@
     }
     
    function CAMEL(){
+
 	   var MonteCarlo = [];
 	   var Tier1;
 	   var Tier2;
 	   var TotalTier;
-	   var ShareHequity = parseInt(document.getElementById("ShareholdersEQ").value);
-	   var RetainedEarnings = parseInt(document.getElementById("RetainedEarnigs").value);
-	   var RiskWassets = parseInt(document.getElementById("RiskwAssets").value);
-	   var TotalCapital = parseInt(document.getElementById("TotalCapital").value);
-	   var TotalAssets = parseInt(document.getElementById("TotalAssets").value);
+	   var ShareHequity     =     parseInt(document.getElementById("ShareholdersEQ").value);
+	   var RetainedEarnings =     parseInt(document.getElementById("RetainedEarnigs").value);
+	   var RiskWassets      =     parseInt(document.getElementById("RiskwAssets").value);
+	   var TotalCapital     =     parseInt(document.getElementById("TotalCapital").value);
+   	   var TotalLoans       =     parseInt(document.getElementById("TotalLoans").value);
+	   var TotalAssets      =     parseInt(document.getElementById("TotalAssets").value);
 	   var CamelC;
 	   var CamelC2;
 	   var CAR;
-	   
+	   var NPL = document.getElementById("NPL");
+	   var op = NPL.options[NPL.selectedIndex].text;
+	   var AQE;
+	  
 	   Tier1=  (ShareHequity+RetainedEarnings)/RiskWassets;
 	   Tier2=   TotalCapital/RiskWassets;
 	   TotalTier = Tier1+Tier2;
@@ -44,14 +49,15 @@
 	   CamelC2 = TotalCapital/TotalAssets;
 	   CAR = (CamelC+CamelC2)*1000;
 	   
-	   if (TotalTier>8){
+	
+	   if (TotalTier > 8){
 		   StressPass.value= "Passed"
 		   }else {
 				StressPass.value= "Failed"
 			}
 		   
 
-	 camel:  if (CAR <= 18 || TotalTier<8){
+	  camel:  if (CAR <= 18 || TotalTier<8){
 	   
 		 shareEquity.value= 5;	   
 	     break camel;
@@ -70,21 +76,54 @@
 			
 		 }else if (CAR<=38){
 				 if (CAR==33){
-     		shareEquity.value= 1.4;	   
+					shareEquity.value= 1.4;	   
 		 }else if (CAR > 34 && CAR<37){
-			shareEquity.value= 1.4;	  
+					shareEquity.value= 1.4;	  
 			}else if (CAR>37){
-			shareEquity.value= 1;	  
+					shareEquity.value= 1;	  
 				}
 		 }else{
 	
 	   		shareEquity.value= "OOps Something went wrong";  
 					 }
-
-
-		   alert(CAR);
 		   
-		   }
+		   alert(TotalTier);
+		   
+	   if (op == "2-10%"){
+		   
+		  AQE = TotalLoans/4;
+		   
+	   }else if (op == "10-30%"){
+	      AQE = TotalLoans/10;
+	 
+	   }else if (op == "30-60%"){
+		  AQE = TotalLoans/15;      
+	
+	   }
+	   
+	   AQE= TotalLoans-AQE;
+	   
+	   
+	   
+	   
+	   alert(AQE);
+		
+		
+		
+		  }
+	   
+	
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
+	   
 	   
 
     function chart() { 
