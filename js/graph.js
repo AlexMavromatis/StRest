@@ -72,7 +72,8 @@
 	   CamelC2 = TotalCapital/TotalAssets;
 	   CAR = (CamelC+CamelC2)*1000;
 	   
-	
+	   alert(CAR);
+	   alert(TotalTier);
 	   if (TotalTier > 8){
 		   StressPass.value= "Passed"
 	   }else{
@@ -85,38 +86,37 @@
 		 shareEquity.value= 5;	   
 	     break camel;
 		
-		 }else if (CAR <= 23){
+	   }else if (CAR <= 23){
 		 
 			shareEquity.value= 4;	  
 			 
-		 }else if (CAR<= 28){
+	   }else if (CAR<= 28){
 		 
 			shareEquity.value=3;
 				   
-		 }else if (CAR <= 33){
+	   }else if (CAR <= 33){
 			
 			shareEquity.value= 2;	   
 			
-		 }else   if (CAR<=38){
+	   }else   if (CAR<=38){
 				 if (CAR==33){
 					 
 					    shareEquity.value= 1.4;	   
 					    
-		 }else   if (CAR > 34 && CAR<37){
+   	   }else   if (CAR > 34 && CAR<37){
 			 
 					    shareEquity.value= 1.4;	  
 					    
-			}else if (CAR > 37){
+	   }else if (CAR > 37){
 				
 					shareEquity.value= 1;	  
-				}
+		}
 		
-		   alert(CAR);
-		   alert(TotalTier);
-	
-		   AQE = (NPL/TotalLoans)*100;
+	  
+
+	   AQE = (NPL/TotalLoans)*100;
 	   
-		   AQE2 = (NPL/TotalEquityShares)*100;
+	   AQE2 = (NPL/TotalEquityShares)*100;
 	   
 	   
 	   if (AQE>=1 && AQE2>=1){
@@ -125,16 +125,12 @@
 		   
 	   }else if(AQE <=2 && AQE2 <= 2){
 		   
+		   ASQ=2;   
 		   
-		   ASQ=2;
-		   
-		   
-		   }else if(AQE <=3 && AQE2 <= 3){
-		   
-		   
+	   }else if(AQE <=3 && AQE2 <= 3){
+		   		   
 		   ASQ=3;
-		   
-		   
+		  		   
 		} else { 
 			  
 		   ASQ=5; 
@@ -310,9 +306,15 @@
 		
 		}
 			
-			LQE3 = (LQE + LQE2)/2;
+		LQE3 = (LQE + LQE2)/2;
 
 		LiquitidyEval.value = LQE3;
+
+		FinalCamel.value = (LQE3 + EDE + ManagementEval.value + ASQ + shareEquity.value)/5;
+
+
+
+
 
 }
 		 

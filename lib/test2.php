@@ -40,7 +40,7 @@
        
        Liquidity Evaluation: <input type="text"  id="LiquitidyEval"  class="form-control"  readonly>
        
-       General CAMEL Evaluation: <input type="text"  id="third"  class="form-control"  readonly>
+       General CAMEL Evaluation: <input type="text"  id="FinalCamel"  class="form-control"  readonly>
        
        Stress Test Outcome: <input type="text"  id="StressPass"  class="form-control"  readonly>
        
