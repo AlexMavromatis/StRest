@@ -52,6 +52,7 @@
 	   var TotalAssets       =    parseInt(document.getElementById("TotalAssets").value);
 	   var NetinterestIncome =    parseInt(document.getElementById("NetInterestIncome").value);
 	   var AvgAssetsEarnings =    parseInt(document.getElementById("AVGearningsAssets").value);
+	   var TotalEquityShares =    parseInt(document.getElementById("TotalEquityShares").value);
 	   var OperatingExpenses =    parseInt(document.getElementById("OpExpenses").value);
 	   var NonInterestIncome =    parseInt(document.getElementById("NonInterestIncome").value);
 	   var AssetsGrate		 =    parseInt(document.getElementById("AssetRate").value);
@@ -115,7 +116,7 @@
 	
 		   AQE = (NPL/TotalLoans)*100;
 	   
-		   AQE2 = (NPL/ShareHequity)*100;
+		   AQE2 = (NPL/TotalEquityShares)*100;
 	   
 	   
 	   if (AQE>=1 && AQE2>=1){
@@ -273,37 +274,37 @@
 			
 			
 			
-		if ((TotalDeposits/TotalAssets) <=75){
+		if ((TotalDeposits/TotalAssets)*100 <=75){
 			
 			LQE=5;
 			
-		}else if ((TotalDeposits/TotalAssets) > 75 && (TotalDeposits/TotalAssets) < 85 ){
+		}else if ((TotalDeposits/TotalAssets)*100 > 75 && (TotalDeposits/TotalAssets) < 85 ){
 			
 			LQE=4;
 			
-		}else if ((TotalDeposits/TotalAssets) > 85 && (TotalDeposits/TotalAssets) < 95 ){
+		}else if ((TotalDeposits/TotalAssets)*100 > 85 && (TotalDeposits/TotalAssets) < 95 ){
 			
 			LQE=3;
 			
-		}else if ((TotalDeposits/TotalAssets) > 95 && (TotalDeposits/TotalAssets) < 97 ){
+		}else if ((TotalDeposits/TotalAssets)*100 > 95 && (TotalDeposits/TotalAssets) < 97 ){
 			
 			LQE=2;
 			
-		}else if ((TotalDeposits/TotalAssets) >99 ){
+		}else if ((TotalDeposits/TotalAssets)*100 > 99 ){
 			
 			LQE=1;
 			
 		}
 			
-		if (TotalLoans/TotalDeposits <= 80){
+		if ((TotalLoans/TotalDeposits)*100 <= 80){
 			
 			LQE2 =5;
 			
-		}else if ((TotalLoans/TotalDeposits) > 80 && (TotalLoans/TotalDeposits) < 90){
+		}else if ((TotalLoans/TotalDeposits)*100 > 80 && (TotalLoans/TotalDeposits) < 90){
 			
 			LQE2 =3;
 		
-		}else if ((TotalLoans/TotalDeposits) > 90){
+		}else if ((TotalLoans/TotalDeposits)*100 > 90){
 			
 			LQE2 =1;
 		
