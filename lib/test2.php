@@ -38,7 +38,7 @@
             
        Earnings Evaluation: <input type="text"   id="EarningsEval"  class="form-control"  readonly>
        
-       Liquidity Evaluation: <input type="text"  id="third"  class="form-control"  readonly>
+       Liquidity Evaluation: <input type="text"  id="LiquitidyEval"  class="form-control"  readonly>
        
        General CAMEL Evaluation: <input type="text"  id="third"  class="form-control"  readonly>
        

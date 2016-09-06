@@ -36,7 +36,9 @@
 	   var EEC2; 
 	   var EEC3;
 	   var EDE;  // Earnigns dynamics evaluation
-	   
+	   var LQE;  // Liquitidy evaluation variable
+	   var LQE2;  // Liquitidy evaluation variable
+	   var LQE3;  // Liquitidy evaluation variable
 	   var MonteCarlo = [];
 	   var Tier1;
 	   var Tier2;
@@ -54,6 +56,7 @@
 	   var NonInterestIncome =    parseInt(document.getElementById("NonInterestIncome").value);
 	   var AssetsGrate		 =    parseInt(document.getElementById("AssetRate").value);
 	   var ShareHEquitygRate =    parseInt(document.getElementById("ShareHoldersRate").value);
+       var TotalDeposits     =    parseInt(document.getElementById("TotalDeposits").value);
        var NPL = (document.getElementById("NPL").value); //Non performing loans
 	   var LoansProvision = document.getElementById("NPLprovision");
 	   var ProvisionOpt   = LoansProvision.options[LoansProvision.selectedIndex].text;
@@ -106,13 +109,9 @@
 				
 					shareEquity.value= 1;	  
 				}
-		 }else{
-	
-					shareEquity.value= "OOps Something went wrong";  
-
-		 }
-		   
+		
 		   alert(CAR);
+		   alert(TotalTier);
 	
 		   AQE = (NPL/TotalLoans)*100;
 	   
@@ -271,6 +270,50 @@
 			
 			
 			}
+			
+			
+			
+		if ((TotalDeposits/TotalAssets) <=75){
+			
+			LQE=5;
+			
+		}else if ((TotalDeposits/TotalAssets) > 75 && (TotalDeposits/TotalAssets) < 85 ){
+			
+			LQE=4;
+			
+		}else if ((TotalDeposits/TotalAssets) > 85 && (TotalDeposits/TotalAssets) < 95 ){
+			
+			LQE=3;
+			
+		}else if ((TotalDeposits/TotalAssets) > 95 && (TotalDeposits/TotalAssets) < 97 ){
+			
+			LQE=2;
+			
+		}else if ((TotalDeposits/TotalAssets) >99 ){
+			
+			LQE=1;
+			
+		}
+			
+		if (TotalLoans/TotalDeposits <= 80){
+			
+			LQE2 =5;
+			
+		}else if ((TotalLoans/TotalDeposits) > 80 && (TotalLoans/TotalDeposits) < 90){
+			
+			LQE2 =3;
+		
+		}else if ((TotalLoans/TotalDeposits) > 90){
+			
+			LQE2 =1;
+		
+		}
+			
+			LQE3 = (LQE + LQE2)/2;
+
+		LiquitidyEval.value = LQE3;
+
+}
 		 
 		
 
