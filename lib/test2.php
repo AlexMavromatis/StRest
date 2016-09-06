@@ -81,8 +81,8 @@
 	        
 	   Non Performing Loans Provision Percentage:
 	<select class="form-control" id="NPLprovision" style="width: 300px" >
-       <option value="Standard"><100%</option>
-       <option value="Extreme">100%</option>
+       <option value="Standard">100%</option>
+       <option value="Extreme"><100%</option>
        </select>
 	   </br>   
  
@@ -105,7 +105,7 @@
             
      <input type="text" id="NetInterestIncome"    class="form-control" placeholder="Net Interest Income Amount">  </br>
             
-     <input type="text" id="AVGearningsAssets"  	class="form-control" placeholder="Average Earnings Assets Amount">  </br>
+     <input type="text" id="AVGearningsAssets"  	class="form-control" placeholder="Average Earnings Assets Amount ANNUAL">  </br>
       
      <input type="text" id="OpExpenses"  class="form-control" placeholder="Opareting Expenses Amount">  </br>
             
