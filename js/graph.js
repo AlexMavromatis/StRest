@@ -156,7 +156,7 @@
 	       AssetQEVal.value=ASQ;
 	  
 	  
-	   if (IncomeRate < =10){
+	   if (IncomeRate <= 10){
 		  
 		  ManagementEval.value= 4;
 		  
@@ -206,20 +206,26 @@
 		}
 		
 	
-		if (((OperatingExpenses / NetinterestIncome) + NonInterestIncome) == 70 ){
+		if (((OperatingExpenses / NetinterestIncome) + NonInterestIncome) <= 70 ){
 			
 			EEC1 = 5;
 			
 		}else if ( ((OperatingExpenses / NetinterestIncome) + NonInterestIncome) < 70 && ((OperatingExpenses / NetinterestIncome) + NonInterestIncome) > 40){
 			
 			EEC1 = 3;
-		}else if ( ((OperatingExpenses / NetinterestIncome) + NonInterestIncome) < 40 && ((OperatingExpenses / NetinterestIncome) + NonInterestIncome) > 20){
+		
+		}else if (((OperatingExpenses / NetinterestIncome) + NonInterestIncome) > 20){
 			
 			EEC1 = 1;
-		}
+		
+		}else{
+			
+			EEC	 = "OOps Something went wrong"; 
+			
+		} 
 			
 			
-		if ((NetinterestIncome/AssetsGrate) == 1 ){
+		if ((NetinterestIncome/AssetsGrate) <= 1 ){
 			
 			EEC2 = 4;
 			
@@ -231,11 +237,15 @@
 			
 			EEC2 = 1;
 			
-		}
-		
-		if ( (NetinterestIncome / ShareHEquitygRate) == 15 ){
+		}else {
 			
-			EEC3 = 4;
+			EEC	 = "OOps Something went wrong"; 
+					
+		} 
+		
+		if ( (NetinterestIncome / ShareHEquitygRate) <= 15 ){
+			
+			EEC3 = 5;
 			
 		}else if ((NetinterestIncome / ShareHEquitygRate) > 15 && (NetinterestIncome / ShareHEquitygRate) < 20 ){
 			
