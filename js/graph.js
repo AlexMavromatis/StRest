@@ -38,10 +38,14 @@
 	   var CamelC;
 	   var CamelC2;
 	   var CAR;
-	   var NPL = document.getElementById("NPL");
-	   var op = NPL.options[NPL.selectedIndex].text;
+	   var ASQ;
+	   var NPL = (document.getElementById("NPL").value);
+	   var LoansProvision = document.getElementById("NPLprovision");
+	   var ProvisionOpt   = LoansProvision.options[LoansProvision.selectedIndex].text;
 	   var AQE;
-	  
+	   var AQE2;
+	   var IncomeRate = parseInt(document.getElementById("IncomeRate").value);
+
 	   Tier1=  (ShareHequity+RetainedEarnings)/RiskWassets;
 	   Tier2=   TotalCapital/RiskWassets;
 	   TotalTier = Tier1+Tier2;
@@ -88,26 +92,73 @@
 					 }
 		   
 		   alert(TotalTier);
-		   
-	   if (op == "2-10%"){
-		   
-		  AQE = TotalLoans/4;
-		   
-	   }else if (op == "10-30%"){
-	      AQE = TotalLoans/10;
-	 
-	   }else if (op == "30-60%"){
-		  AQE = TotalLoans/15;      
 	
-	   }
-	   
-	   AQE= TotalLoans-AQE;
-	   
-	   
-	   
-	   
-	   alert(AQE);
 		
+		AQE = (NPL/TotalLoans)*100;
+	   
+		AQE2 = (NPL/ShareHequity)*100;
+	   
+	   
+	   if (AQE>=1 && AQE2>=1){
+		   
+		   ASQ=1;
+		   
+	   }else if(AQE <=2 && AQE2 <= 2){
+		   
+		   
+		   ASQ=2;
+		   
+		   
+		   }else if(AQE <=3 && AQE2 <= 3){
+		   
+		   
+		   ASQ=3;
+		   
+		   
+		}else
+		  { ASQ=5;}
+		  
+	  if (ProvisionOpt !=="100%"){
+		 
+		  ASQ=5;
+		  
+	  }
+	
+	
+	
+	 if (ASQ==null){
+		 AssetQEVal.value= "OOps Something went wrong";  
+		 }
+		 
+	  AssetQEVal.value=ASQ;
+	  
+	  
+	  if (IncomeRate==10){
+		  
+		  ManagementEval.value= 4;
+		  
+	  }else if (IncomeRate >=10 && IncomeRate<= 13){
+		  
+		   ManagementEval.value= 3;
+		  
+		  
+		  }else if (IncomeRate >=13 && IncomeRate<= 15){
+		  
+		   ManagementEval.value= 2;
+		  
+		  
+		  }else if (IncomeRate > 15){
+			  		
+		 
+           ManagementEval.value= 1;
+
+			  
+			  }else {
+				  
+		   ManagementEval.value= "OOps Something went wrong";  
+
+				  
+				  }
 		
 		
 		  }

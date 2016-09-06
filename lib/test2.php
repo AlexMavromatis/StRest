@@ -32,11 +32,11 @@
 		   
        Capital Adequacy Evaluation: <input type="text" id="shareEquity" name="shareEquityEval"  class="form-control"  readonly>
       
-       Asset Quality Evaluation: <input type="text" id="third"  class="form-control"  readonly>
+       Asset Quality Evaluation: <input type="text" id="AssetQEVal"  class="form-control"  readonly>
             
-       Management Evaluation: <input type="text" id="second"  class="form-control" readonly>
+       Management Evaluation: <input type="text" id="ManagementEval"  class="form-control" readonly>
             
-       Earnings Evaluation: <input type="text"   id="third"  class="form-control"  readonly>
+       Earnings Evaluation: <input type="text"   id="EarningsEval"  class="form-control"  readonly>
        
        Liquidity Evaluation: <input type="text"  id="third"  class="form-control"  readonly>
        
@@ -73,26 +73,19 @@
  </br>
 	 <input type="text" id="TotalCapital"  class="form-control" placeholder="Please input Total Capital Amount:">
 </br>
+	 <input type="text" id="TotalDeposits"  class="form-control" placeholder="Please input Total Customer Deposits Amount:">
+</br>
 	
-	Non Performing Loans Percentage:
-	<select class="form-control" id="NPL" style="width: 300px" >
-       <option value="Standard">2-10%</option>
-       <option value="medium">10-30%</option>
-       <option value="Extreme">30-60%</option>
-       </select>
-	   </br>        
+ 	<input type="text" id="NPL"  class="form-control" placeholder="Non Performing Loans Amount:" >
+ </br>
+	        
 	   Non Performing Loans Provision Percentage:
 	<select class="form-control" id="NPLprovision" style="width: 300px" >
        <option value="Standard"><100%</option>
        <option value="Extreme">100%</option>
        </select>
 	   </br>   
-	      Non Performing Loans Provision Allowance Percentage:
-	<select class="form-control" id="NPLallowance" style="width: 300px" >
-       <option value="Standard">2-10%</option>
-       <option value="Extreme">10-30%</option>
-       </select>
-	   </br>   
+ 
     <input type="text" id="TotalEquityShares"  class="form-control" placeholder=" Please input Total Equity Shares Amount" >            
       
       
