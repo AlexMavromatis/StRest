@@ -1,5 +1,6 @@
 
    
+	  
    
    
     window.simple=function(){
@@ -11,6 +12,7 @@
 			waitingDialog.hide();
 			chart();
 			chart2();
+			MonteCarlo();
 			CAMEL();
 			}
             if(e.message){
@@ -25,113 +27,111 @@
     
    function CAMEL(){
 	  
-	   var CamelC;
-	   var CamelC2;
-	   var CAR;	 // Capital adequacy variable for camel rating
-	   var ASQ;	 // Assett quality evaluation variable for camel rating
-	   var AQE;	 // Assett quality evaluation variable for camel rating
+	 
+	  
+	   var TotalTier;
+	   var ShareHequity      =    parseInt(document.getElementById("ShareholdersEQ").value,10);
+	   var RetainedEarnings  =    parseInt(document.getElementById("RetainedEarnigs").value,10);
+	   var RiskWassets       =    parseInt(document.getElementById("RiskwAssets").value,10);
+	   var TotalCapital      =    parseInt(document.getElementById("TotalCapital").value,10);
+   	   var TotalLoans        =    parseInt(document.getElementById("TotalLoans").value,10);
+	   var TotalAssets       =    parseInt(document.getElementById("TotalAssets").value,10);
+	   var NetinterestIncome =    parseInt(document.getElementById("NetInterestIncome").value,10);
+	   var AvgAssetsEarnings =    parseInt(document.getElementById("AVGearningsAssets").value,10);
+	   var TotalEquityShares =    parseInt(document.getElementById("TotalEquityShares").value,10);
+	   var OperatingExpenses =    parseInt(document.getElementById("OpExpenses").value,10);
+	   var NonInterestIncome =    parseInt(document.getElementById("NonInterestIncome").value,10);
+	   var AssetsGrate		 =    parseInt(document.getElementById("AssetRate").value,10);
+	   var ShareHEquitygRate =    parseInt(document.getElementById("ShareHoldersRate").value,10);
+       var TotalDeposits     =    parseInt(document.getElementById("TotalDeposits").value,10);
+       var NPL 				 =    parseInt(document.getElementById("NPL").value); //Non performing loans
+	   var LoansProvision    =    document.getElementById("NPLprovision");
+	   var ProvisionOpt      =    LoansProvision.options[LoansProvision.selectedIndex].text;
+       var IncomeRate 		 =    parseInt(document.getElementById("IncomeRate").value,10);
+	   var CAR;	  // Capital adequacy variable for camel rating
+	   var ASQ;	  // Assett quality evaluation variable for camel rating
+	   var AQE;	  // Assett quality evaluation variable for camel rating
 	   var AQE2;
-	   var EEC;  // Earnings Evaluation variables EEC for final camel rating
+	   var EEC;   // Earnings Evaluation variables EEC for final camel rating
 	   var EEC1; 
 	   var EEC2; 
 	   var EEC3;
-	   var EDE;  // Earnigns dynamics evaluation
-	   var LQE;  // Liquitidy evaluation variable
+	   var EDE;   // Earnigns dynamics evaluation
+	   var LQE;   // Liquitidy evaluation variable
 	   var LQE2;  // Liquitidy evaluation variable
 	   var LQE3;  // Liquitidy evaluation variable
-	   var MonteCarlo = [];
+	   var MAE;
+	   var CAPE;
 	   var Tier1;
 	   var Tier2;
-	  
-	   var TotalTier;
-	   var ShareHequity      =    parseInt(document.getElementById("ShareholdersEQ").value);
-	   var RetainedEarnings  =    parseInt(document.getElementById("RetainedEarnigs").value);
-	   var RiskWassets       =    parseInt(document.getElementById("RiskwAssets").value);
-	   var TotalCapital      =    parseInt(document.getElementById("TotalCapital").value);
-   	   var TotalLoans        =    parseInt(document.getElementById("TotalLoans").value);
-	   var TotalAssets       =    parseInt(document.getElementById("TotalAssets").value);
-	   var NetinterestIncome =    parseInt(document.getElementById("NetInterestIncome").value);
-	   var AvgAssetsEarnings =    parseInt(document.getElementById("AVGearningsAssets").value);
-	   var TotalEquityShares =    parseInt(document.getElementById("TotalEquityShares").value);
-	   var OperatingExpenses =    parseInt(document.getElementById("OpExpenses").value);
-	   var NonInterestIncome =    parseInt(document.getElementById("NonInterestIncome").value);
-	   var AssetsGrate		 =    parseInt(document.getElementById("AssetRate").value);
-	   var ShareHEquitygRate =    parseInt(document.getElementById("ShareHoldersRate").value);
-       var TotalDeposits     =    parseInt(document.getElementById("TotalDeposits").value);
-       var NPL = (document.getElementById("NPL").value); //Non performing loans
-	   var LoansProvision = document.getElementById("NPLprovision");
-	   var ProvisionOpt   = LoansProvision.options[LoansProvision.selectedIndex].text;
-       var IncomeRate = parseInt(document.getElementById("IncomeRate").value);
+	   var GeneralCamel;
 
 
+//Calculating tiers of bank and Camel ratings 
 
-	   Tier1=  (ShareHequity+RetainedEarnings)/RiskWassets;
-	   Tier2=   TotalCapital/RiskWassets;
-	   TotalTier = Tier1+Tier2;
-	   CamelC  = (Tier1-Tier2)/RiskWassets;
-	   CamelC2 = TotalCapital/TotalAssets;
-	   CAR = (CamelC+CamelC2)*1000;
+	   Tier1     =   ((ShareHequity+RetainedEarnings)/RiskWassets)*100;
+	   Tier2	 =   (TotalCapital/RiskWassets)*100;
+	   TotalTier =   Tier1+Tier2;   
+	   CAR       =   (TotalCapital/TotalAssets)*100;
+	   AQE		 =	 (NPL/TotalLoans)*100;
+	   AQE2 	 = (NPL/TotalEquityShares)*100;
+	   ASQ		 = AQE + AQE2;
 	   
-	   alert(CAR);
-	   alert(TotalTier);
+	   
 	   if (TotalTier > 8){
 		   StressPass.value= "Passed"
 	   }else{
-				StressPass.value= "Failed"
+		   StressPass.value= "Failed"
 	   }
 		   
 
-	   camel:  if (CAR <= 18 || TotalTier<8){
+	   if (CAR <= 1.8){
 	   
-		 shareEquity.value= 5;	   
-	     break camel;
+		     
+	         CAPE=5;
 		
-	   }else if (CAR <= 23){
+	   }else if (CAR <= 2.3){
 		 
-			shareEquity.value= 4;	  
+		  
+			 CAPE=4;
 			 
-	   }else if (CAR<= 28){
+	   }else if (CAR<= 2.8){
 		 
-			shareEquity.value=3;
-				   
-	   }else if (CAR <= 33){
-			
-			shareEquity.value= 2;	   
-			
-	   }else   if (CAR<=38){
-				 if (CAR==33){
-					 
-					    shareEquity.value= 1.4;	   
-					    
-   	   }else   if (CAR > 34 && CAR<37){
 			 
-					    shareEquity.value= 1.4;	  
-					    
-	   }else if (CAR > 37){
+			 CAPE=3;	   
+			 
+	   }else if (CAR <= 3.3){
+			
+			CAPE=2;
+			
+	   }else if (CAR<=3.8){
+		   	 
+		
+				    
+	   }else if (CAR > 3.7){
 				
-					shareEquity.value= 1;	  
+		
+		    CAPE=1;
 		}
 		
-	  
-
-	   AQE = (NPL/TotalLoans)*100;
 	   
-	   AQE2 = (NPL/TotalEquityShares)*100;
+	//------------------------------------------------------------- 
+	 
 	   
 	   
-	   if (AQE>=1 && AQE2>=1){
+	   if (ASQ <=1 ){
 		   
 		   ASQ=1;
 		   
-	   }else if(AQE <=2 && AQE2 <= 2){
+	   }else if(ASQ <=2 && ASQ > 3){
 		   
 		   ASQ=2;   
 		   
-	   }else if(AQE <=3 && AQE2 <= 3){
+	   }else if(ASQ <=3 && ASQ > 4){
 		   		   
 		   ASQ=3;
 		  		   
-		} else { 
+		} else if (ASQ > 4){ 
 			  
 		   ASQ=5; 
 	
@@ -142,84 +142,69 @@
 		   ASQ=5;
 		  
 	   }
+		//------------------------------------------------------------- 
 	
-	   if (ASQ==null){
-		
-		   AssetQEVal.value= "OOps Something went wrong";  
-		 
-		 }
-		 
-	       AssetQEVal.value=ASQ;
-	  
 	  
 	   if (IncomeRate <= 10){
 		  
-		  ManagementEval.value= 4;
+		   MAE=4;
+		   
+	   }else if (IncomeRate >10 && IncomeRate <=13){
 		  
-	      }else if (IncomeRate >=10 && IncomeRate<= 13){
+		   MAE=3;
 		  
-		   ManagementEval.value= 3;
+	   }else if (IncomeRate >13 && IncomeRate <= 15){
 		  
+		   MAE=2;
 		  
-		  }else if (IncomeRate >=13 && IncomeRate<= 15){
-		  
-		   ManagementEval.value= 2;
-		  
-		  
-		  }else if (IncomeRate > 15){
+	   }else if (IncomeRate > 15){
 			  		
-		 
-           ManagementEval.value= 1;
-
+		   MAE=1;
 			  
-		  }else {
-				  
-		   ManagementEval.value= "OOps Something went wrong";  
-		  
-		  }
+	   }
+		 	//------------------------------------------------------------- 
 		
 		
-		if ((NetinterestIncome / AvgAssetsEarnings) <= 4.5) {
+		
+		if ((NetinterestIncome/AvgAssetsEarnings) <= 4.5) {
 						
 			EEC=5;
 			
-		} else if ((NetinterestIncome / AvgAssetsEarnings) >4.5 && (NetinterestIncome / AvgAssetsEarnings) < 8.5){
+		} else if ((NetinterestIncome/AvgAssetsEarnings) >4.5 && (NetinterestIncome/AvgAssetsEarnings) < 8.5){
 		
 			EEC=4;
 		
-		} else if ((NetinterestIncome / AvgAssetsEarnings) >8.5 && (NetinterestIncome / AvgAssetsEarnings) < 11.5){
+		} else if ((NetinterestIncome/AvgAssetsEarnings) > 8.5 && (NetinterestIncome/AvgAssetsEarnings) < 11.5){
 		
 			EEC=3;
 		
-		} else if ((NetinterestIncome / AvgAssetsEarnings) >11.5 && (NetinterestIncome / AvgAssetsEarnings) < 14){
+		} else if ((NetinterestIncome/AvgAssetsEarnings) >11.5 && (NetinterestIncome/AvgAssetsEarnings) < 14){
 		
 			EEC=2;
 		
-		} else if ((NetinterestIncome / AvgAssetsEarnings) >14.5){
+		} else if ((NetinterestIncome/AvgAssetsEarnings) > 14.5){
 		
 			EEC=1;
 		
 		}
 		
+		//------------------------------------------------------------- 
 	
-		if (((OperatingExpenses / NetinterestIncome) + NonInterestIncome) <= 70 ){
+		if (((OperatingExpenses/NetinterestIncome) + NonInterestIncome) <= 70 ){
 			
 			EEC1 = 5;
 			
-		}else if ( ((OperatingExpenses / NetinterestIncome) + NonInterestIncome) < 70 && ((OperatingExpenses / NetinterestIncome) + NonInterestIncome) > 40){
+		}else if (((OperatingExpenses/NetinterestIncome) + NonInterestIncome) < 70 && ((OperatingExpenses/NetinterestIncome) + NonInterestIncome) > 40){
 			
 			EEC1 = 3;
 		
-		}else if (((OperatingExpenses / NetinterestIncome) + NonInterestIncome) > 20){
+		}else if (((OperatingExpenses/NetinterestIncome) + NonInterestIncome) > 20){
 			
 			EEC1 = 1;
 		
-		}else{
-			
-			EEC	 = "OOps Something went wrong"; 
-			
-		} 
-			
+		}
+				//------------------------------------------------------------- 
+	
 			
 		if ((NetinterestIncome/AssetsGrate) <= 1 ){
 			
@@ -233,25 +218,25 @@
 			
 			EEC2 = 1;
 			
-		}else {
-			
-			EEC	 = "OOps Something went wrong"; 
-					
-		} 
+		}
 		
-		if ( (NetinterestIncome / ShareHEquitygRate) <= 15 ){
+		
+			//------------------------------------------------------------- 
+	
+	
+		if ( (NetinterestIncome/ShareHEquitygRate) <= 15 ){
 			
 			EEC3 = 5;
 			
-		}else if ((NetinterestIncome / ShareHEquitygRate) > 15 && (NetinterestIncome / ShareHEquitygRate) < 20 ){
+		}else if ((NetinterestIncome/ShareHEquitygRate) > 15 && (NetinterestIncome/ShareHEquitygRate) < 20 ){
 			
 			EEC3 = 3;
 		
-		}else if ((NetinterestIncome / ShareHEquitygRate) > 20 && (NetinterestIncome / ShareHEquitygRate) < 25 ){
+		}else if ((NetinterestIncome/ShareHEquitygRate) > 20 && (NetinterestIncome/ShareHEquitygRate) < 25 ){
 			
 			EEC3 = 2;
 		
-		}else if ((NetinterestIncome / ShareHEquitygRate) > 25 ){
+		}else if ((NetinterestIncome/ShareHEquitygRate) > 25 ){
 			
 			EEC3 = 1;
 		
@@ -260,14 +245,8 @@
 		    EEC3 = 5;
 		
 		}
-		
-		
-		EDE = (EEC + EEC1 + EEC2 + EEC3)/4;
-		EarningsEval.value = EDE;
 			
-			
-			}
-			
+				//------------------------------------------------------------- 
 			
 			
 		if ((TotalDeposits/TotalAssets)*100 <=75){
@@ -291,7 +270,10 @@
 			LQE=1;
 			
 		}
-			
+		
+			//------------------------------------------------------------- 
+	
+		
 		if ((TotalLoans/TotalDeposits)*100 <= 80){
 			
 			LQE2 =5;
@@ -305,28 +287,92 @@
 			LQE2 =1;
 		
 		}
+		
+			//------------------------------------------------------------- 
+		
 			
+        shareEquity.value= CAPE;	  
+			
+	    ManagementEval.value= MAE;
+			
+		EDE = (EEC + EEC1 + EEC2 + EEC3)/4;
+		
+		EarningsEval.value = EDE;
+		
 		LQE3 = (LQE + LQE2)/2;
 
 		LiquitidyEval.value = LQE3;
+		
+	    AssetQEVal.value=ASQ;
 
-		FinalCamel.value = (LQE3 + EDE + ManagementEval.value + ASQ + shareEquity.value)/5;
+		GeneralCamel = (LQE3 + EDE + MAE + ASQ + CAPE)/5;
 
+		FinalCamel.value = GeneralCamel;
 
+	
 
 
 
 }
 		 
 		
-
+function MonteCarlo(){
 	   
+	   var ShareHequity      =    parseInt(document.getElementById("ShareholdersEQ").value,10);
+	   var RetainedEarnings  =    parseInt(document.getElementById("RetainedEarnigs").value,10);
+	   var RiskWassets       =    parseInt(document.getElementById("RiskwAssets").value,10);
+	   var TotalCapital      =    parseInt(document.getElementById("TotalCapital").value,10);
+	   var MonteCarlo = [];
+	   var Tier1;
+	   var Tier2;
+	   var seed;
+	   var DAlambert;
+	   
+	   Tier1     =   ((ShareHequity+RetainedEarnings)/RiskWassets)*100;
+	   Tier2	 =   (TotalCapital/RiskWassets)*100;
+	   TotalTier =   Tier1+Tier2; 
+	 
+	 
+	   if (TotalTier<8){
+	       
+	       StressSuccessProb.value="0%"
+	   
+	   }
+	   
+	   seed = TotalTier/5000;
+	   
+	   for (i=1; i<10000; i++){
+	   
+	   var sample = Math.floor(Math.random() * (10000 - 1 + 1)) + 1;
 	
-	   
-	   
-	   
-	   
-	   
+	       if ((TotalTier/sample)>seed){
+		   
+		       DAlambert++;
+		       MonteCarlo[i]=1;
+		   
+	       }else if((TotalTier/sample)<seed){
+		   
+		       DAlambert--;
+		       MonteCarlo[i] = 0;
+	
+	
+		   }	
+	  }
+	  var c=0;
+	  var i=0;
+	  
+	  while(i<10000){
+		  if ( MonteCarlo[i]==1){
+			  c++;
+			  }
+		  i--;
+		  
+		  }
+		  
+	  Drawdown.value=c;
+	  
+	  
+} 
 	   
 	   
 	   

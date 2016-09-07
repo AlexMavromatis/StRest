@@ -65,7 +65,7 @@
        <option value="Extreme">Extreme</option>
        </select>
 </br>
-	<input type="text" id="ShareholdersEQ"  class="form-control" placeholder="Please input Shareholders Equity Amount:" >
+	<input type="text" id="ShareholdersEQ"  class="form-control" placeholder="Please input Banks Common Stocks Amount:" min="1000000" max="5000000000000000000" >
     </br>        
      <input type="text" id="RetainedEarnigs"  class="form-control"  placeholder="Please input Retained Earnigns Amount:" >            
 </br>    
