@@ -340,7 +340,7 @@ function MonteCarlo(){
 	   
 	   }
 	   
-	   seed = TotalTier/50000;
+	   seed = TotalTier/80000;
 	   
 	   for (i=1; i<100000; i++){
 	   
@@ -363,7 +363,7 @@ function MonteCarlo(){
 	  var i=0;
 	  
 	  while(i<100000){
-		  if ( MonteCarlo[i]==0){
+		  if ( MonteCarlo[i]==1){
 			  c++;
 			  }
 		  i++;
