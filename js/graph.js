@@ -12,8 +12,8 @@
 			waitingDialog.hide();
 			chart();
 			chart2();
-			MonteCarlo();
 			CAMEL();
+			MonteCarlo();		
 			}
             if(e.message){
                waitingDialog.message(e.message)
@@ -74,8 +74,8 @@
 	   TotalTier =   Tier1+Tier2;   
 	   CAR       =   (TotalCapital/TotalAssets)*100;
 	   AQE		 =	 (NPL/TotalLoans)*100;
-	   AQE2 	 = (NPL/TotalEquityShares)*100;
-	   ASQ		 = AQE + AQE2;
+	   AQE2 	 =   (NPL/TotalEquityShares)*100;
+	   ASQ		 =   AQE + AQE2;
 	   
 	   
 	   if (TotalTier > 8){
@@ -104,14 +104,15 @@
 			
 			CAPE=2;
 			
-	   }else if (CAR<=3.8){
+	   }else if (CAR<=3.5){
 		   	 
-		
+			CAPE=1.4;
 				    
-	   }else if (CAR > 3.7){
+	   }else if (CAR >= 3.7){
 				
 		
 		    CAPE=1;
+		    
 		}
 		
 	   
@@ -339,11 +340,11 @@ function MonteCarlo(){
 	   
 	   }
 	   
-	   seed = TotalTier/5000;
+	   seed = TotalTier/50000;
 	   
-	   for (i=1; i<10000; i++){
+	   for (i=1; i<100000; i++){
 	   
-	   var sample = Math.floor(Math.random() * (10000 - 1 + 1)) + 1;
+	   var sample = Math.floor(Math.random() * (100000 - 1 + 1)) + 1;
 	
 	       if ((TotalTier/sample)>seed){
 		   
@@ -361,11 +362,11 @@ function MonteCarlo(){
 	  var c=0;
 	  var i=0;
 	  
-	  while(i<10000){
-		  if ( MonteCarlo[i]==1){
+	  while(i<100000){
+		  if ( MonteCarlo[i]==0){
 			  c++;
 			  }
-		  i--;
+		  i++;
 		  
 		  }
 		  
