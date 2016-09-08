@@ -75,7 +75,7 @@
 	   CAR       =   (TotalCapital/TotalAssets)*100;
 	   AQE		 =	 (NPL/TotalLoans)*100;
 	   AQE2 	 =   (NPL/TotalEquityShares)*100;
-	   ASQ		 =   AQE + AQE2;
+	   ASQ		 =    AQE + AQE2;
 	   
 	   
 	   if (TotalTier > 8){
@@ -225,7 +225,7 @@
 			//------------------------------------------------------------- 
 	
 	
-		if ( (NetinterestIncome/ShareHEquitygRate) <= 15 ){
+		if ((NetinterestIncome/ShareHEquitygRate) <= 15 ){
 			
 			EEC3 = 5;
 			
@@ -323,11 +323,14 @@ function MonteCarlo(){
 	   var RetainedEarnings  =    parseInt(document.getElementById("RetainedEarnigs").value,10);
 	   var RiskWassets       =    parseInt(document.getElementById("RiskwAssets").value,10);
 	   var TotalCapital      =    parseInt(document.getElementById("TotalCapital").value,10);
+	   var Scenario 		 =    document.getElementById("scenario");
+	   var Sensitiviy        =    Scenario.options[Scenario.selectedIndex].text;
 	   var MonteCarlo = [];
 	   var Tier1;
 	   var Tier2;
 	   var seed;
 	   var DAlambert;
+	   var ProbabilityOfsuccess;
 	   
 	   Tier1     =   ((ShareHequity+RetainedEarnings)/RiskWassets)*100;
 	   Tier2	 =   (TotalCapital/RiskWassets)*100;
@@ -340,7 +343,21 @@ function MonteCarlo(){
 	   
 	   }
 	   
-	   seed = TotalTier/80000;
+	   
+	   if (Sensitiviy=="Standard"){
+		    
+		    seed = TotalTier/80000;
+	   
+	   }else if(Sensitiviy=="Medium"){
+		
+		    seed = TotalTier/60000;
+	   
+	   }else if(Sensitiviy=="Extreme"){
+			   
+		    seed = TotalTier/45000;
+			   
+	   }
+	   
 	   
 	   for (i=1; i<100000; i++){
 	   
@@ -363,13 +380,58 @@ function MonteCarlo(){
 	  var i=0;
 	  
 	  while(i<100000){
+		 
 		  if ( MonteCarlo[i]==1){
 			  c++;
 			  }
 		  i++;
 		  
-		  }
+	  }
+		 
+		 
+      if(c>50000 && TotalTier>8){
 		  
+		  ProbabilityOfsuccess=70;
+		  
+	  }else if(c>50000 && TotalTier >=10){
+		  
+		  ProbabilityOfsuccess=78;
+	  
+	  }else if(c>60000 && TotalTier>8){
+		  
+		  ProbabilityOfsuccess=85;
+	  
+	  }else if(c>60000 && TotalTier>=10){
+		  
+		  ProbabilityOfsuccess=89;
+	  
+	  }else if(c>70000 && TotalTier>8){
+		  
+		  ProbabilityOfsuccess=94;
+	  
+	  }else if(c>70000 && TotalTier>=10){
+		  
+		  ProbabilityOfsuccess=96;
+	  
+	  }else if(c>75000 && TotalTier>8){
+		  
+		  ProbabilityOfsuccess=97;
+	  
+	  }else if(c>75000 && TotalTier>=10){
+		  
+		  ProbabilityOfsuccess=98;
+	  
+	  }else if(c>80000 && TotalTier>8){
+		  
+		  ProbabilityOfsuccess=99;
+	  
+	  }else if(c>80000 && TotalTier>10){
+		  
+		  ProbabilityOfsuccess=100;
+	  
+	  }
+	  
+	  StressSuccessProb.value=ProbabilityOfsuccess + "%";
 	  Drawdown.value=c;
 	  
 	  
