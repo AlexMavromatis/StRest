@@ -79,7 +79,7 @@
 	   AQE2 	 =   (NPL/TotalEquityShares)*100;
 	   ASQ		 =    AQE + AQE2;
 	   
-	   
+	   alert(TotalTier);
 	   if (TotalTier > 8){
 		   StressPass.value= "Passed"
 	   }else{
@@ -598,46 +598,45 @@ $(function () {
 function cameldepict(){
 	
 	
-	
-	
-var x=3;
-var y=1.2;
-var z=4;
-var k=1;
-var w =3;
+var cap  =  parseInt(document.getElementById("shareEquity").value);
+var ade  =  parseInt(document.getElementById("AssetQEVal").value);
+var man  =  parseInt(document.getElementById("ManagementEval").value);
+var ear  =	parseInt(document.getElementById("EarningsEval").value);
+var liq  =  parseInt(document.getElementById("LiquitidyEval").value);
+
 $(function () {
     $('#container3').highcharts({
         chart: {
             type: 'column',
             options3d: {
                 enabled: true,
-                alpha: 10,
-                beta: 25,
-                depth: 70
+                alpha: 20,
+                beta: 35,
+                depth: 110
             }
         },
         title: {
             text: '3D chart with null values'
         },
         subtitle: {
-            text: 'Notice the difference between a 0 value and a null point'
+            text: 'Notice the difference between The outstanding rating and your banks current rating'
         },
         plotOptions: {
             column: {
-                depth: 25
+                depth: 85
             }
         },
         xAxis: {
-            categories: Highcharts.getOptions().lang.shortMonths
+            categories: ["Desired Capital Ranking","Capital Outcome Ranking","Desired Asset Quality Ranking", "Asset Quality Outcome Ranking","Desired Manamement","Management Outcome", "Desired Earnings","Earnigns Outcome","Desired Liqudity","Liquidity Outcome"]
         },
         yAxis: {
             title: {
-                text: null
+                text: 'Evaluation'
             }
         },
         series: [{
-            name: 'Sales',
-            data: [1,x,1,y,1,z,1,w,1,k]
+            name: 'Rankings',
+            data: [1,cap,1,ade,1,man,1,ear,1,liq]
         }]
     });
 });

@@ -25,6 +25,13 @@ div #container{
 	float: right;
 	
 	}
+	
+	#container3 {
+    height: 500px; 
+    min-width: 510px; 
+    max-width: 800px;
+    margin: 0 auto;
+}
 
 	</style>
 </head>
@@ -158,13 +165,13 @@ div #container{
     
     <div class="panel panel-warning">
       <div class="panel-heading">Monte Carlo Methodology Graphical Representation Scatter Plot</div>
-      <div class="panel-body"><div id="container2" style="height: 400px width=670px" ></div>
+      <div class="panel-body"><div id="container2" style="height: 400px" ></div>
 </div></div>
     
     
  <div class="panel panel-warning">
       <div class="panel-heading">CAMEL BANK Rating Graphical Representation</div>
-      <div class="panel-body"><div id="container3" style="height: 400px"></div>
+      <div class="panel-body"><div id="container3" style="height: 600px"></div>
   </div></div>
   
  <div class="panel panel-warning">
