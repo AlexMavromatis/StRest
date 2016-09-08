@@ -9,9 +9,26 @@
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script src="http://code.highcharts.com/modules/exporting.js"></script>
     <script src="http://code.highcharts.com/modules/offline-exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/funnel.js"></script>
+    <script src="https://code.highcharts.com/highcharts-more.js"></script>
+    <script src="https://code.highcharts.com/highcharts-3d.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/test.css" media="screen" />
     <script src="../js/graph.js"></script>
+<style>
+div #container{
+	
+	float: left;
+	
+	}
+	div #container1{
+	
+	float: right;
+	
+	}
+
+	</style>
 </head>
+
 <body class="body" style="background-color:#e6fff2">	
 
  <center><div class="panel panel-primary">
@@ -50,6 +67,9 @@
 
 	   Max Drawdown: <input type="text"  id="Drawdown"  class="form-control"  readonly>
 	   
+	   <input type="hidden"  id="seedswon"  class="form-control"  readonly>
+	   <input type="hidden"  id="seedslost"  class="form-control"  readonly>
+
        </br>
        <input type="submit" id="submit" class="btn btn-primary" value="Save Simulation" />
        </form>
@@ -94,7 +114,7 @@
       	    
      <div class="middle">
 		 Simulation Time Period:
-	<select class="form-control" id="NPLallowance" style="width: 300px" >
+	<select class="form-control" id="SimulationTime" style="width: 300px" >
        <option value="Standard">6 Months</option>
        <option value="Extreme">1 Year</option>  
        <option value="Extreme">2 Years</option>
@@ -132,41 +152,42 @@
  <div class="panel panel-warning">
       <div class="panel-heading">Monte Carlo Graphical Representation Pie Chart</div>
       <div class="panel-body"><div id="container" style="height: 400px"></div>
+      <div id="container1" style="height: 400px"></div>
 </div></div>
-   
+
     
     <div class="panel panel-warning">
       <div class="panel-heading">Monte Carlo Methodology Graphical Representation Scatter Plot</div>
-      <div class="panel-body"><div id="container" style="height: 400px"></div>
+      <div class="panel-body"><div id="container2" style="height: 400px width=670px" ></div>
 </div></div>
     
     
  <div class="panel panel-warning">
       <div class="panel-heading">CAMEL BANK Rating Graphical Representation</div>
-      <div class="panel-body"><div id="container2" style="height: 400px"></div>
+      <div class="panel-body"><div id="container3" style="height: 400px"></div>
   </div></div>
   
  <div class="panel panel-warning">
       <div class="panel-heading">CAMEL BANK Rating Graphical Representation and Comparison with Best Ranking</div>
-      <div class="panel-body"> <div id="container2" style="height: 400px"></div></div></div>
+      <div class="panel-body"> <div id="container4" style="height: 400px"></div></div></div>
 
 
  <div class="panel panel-warning">
       <div class="panel-heading">Probability of Success Graphical Representation</div>
       <div class="panel-body">    
-<div id="container2" style="height: 400px"></div></div></div>
+<div id="container5" style="height: 400px"></div></div></div>
 
 
  <div class="panel panel-warning">
       <div class="panel-heading">Probability of Failure Graphical Representation</div>
       <div class="panel-body">    
-<div id="container2" style="height: 400px"></div></div></div>
+<div id="container6" style="height: 400px"></div></div></div>
 
 
  <div class="panel panel-warning">
       <div class="panel-heading">Drawdown of Assets Graphical Representation</div>
       <div class="panel-body">    
-<div id="container2" style="height: 400px"></div></div></div>
+<div id="container7" style="height: 400px"></div></div></div>
 
 
 </div>

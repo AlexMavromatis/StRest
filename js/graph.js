@@ -10,10 +10,12 @@
          setTimeout(function(){
 		 if(e.message=="Almost Done"){
 			waitingDialog.hide();
-			chart();
-			chart2();
 			CAMEL();
-			MonteCarlo();		
+			var monte = MonteCarlo();		
+			chart();
+			chart2(monte);
+			pyramid();
+			cameldepict();
 			}
             if(e.message){
                waitingDialog.message(e.message)
@@ -346,15 +348,15 @@ function MonteCarlo(){
 	   
 	   if (Sensitiviy=="Standard"){
 		    
-		    seed = TotalTier/80000;
+		    seed = (TotalTier/80000)+0.0001;
 	   
 	   }else if(Sensitiviy=="Medium"){
 		
-		    seed = TotalTier/60000;
+		    seed = (TotalTier/60000)+0.0002;
 	   
 	   }else if(Sensitiviy=="Extreme"){
 			   
-		    seed = TotalTier/45000;
+		    seed = (TotalTier/45000)+0.004;
 			   
 	   }
 	   
@@ -378,12 +380,15 @@ function MonteCarlo(){
 	  }
 	  var c=0;
 	  var i=0;
+	  var cl=0;
 	  
 	  while(i<100000){
 		 
 		  if ( MonteCarlo[i]==1){
 			  c++;
-			  }
+		  }else{
+			  cl++;
+		  }
 		  i++;
 		  
 	  }
@@ -432,8 +437,10 @@ function MonteCarlo(){
 	  }
 	  
 	  StressSuccessProb.value=ProbabilityOfsuccess + "%";
-	  Drawdown.value=c;
+	  seedswon.value=c;
+	  seedslost.value=cl;
 	  
+	  return MonteCarlo;
 	  
 } 
 	   
@@ -445,9 +452,9 @@ function MonteCarlo(){
 	   
 
     function chart() { 
-        var f    = parseInt(document.getElementById("IncomeRate").value);
-        var s    = parseInt(document.getElementById("NetInterestIncome").value);
-        var t    = parseInt(document.getElementById("AVGearningsAssets").value);
+        var f    = parseInt(document.getElementById("seedswon").value);
+        var s    = parseInt(document.getElementById("seedslost").value);
+		
 
     $(function () {
     $('#container').highcharts({
@@ -458,7 +465,7 @@ function MonteCarlo(){
             type: 'pie'
         },
         title: {
-            text: 'Browser market shares January, 2015 to May, 2015'
+            text: 'Monte Carlo Seeds visualization based on datasets'
         },
          subtitle: {
             text: 'Monte Carlo:Simulation Results'
@@ -483,79 +490,177 @@ function MonteCarlo(){
             }
         },
         series: [{
-            name: 'Brands',
+            name: 'Monte Carlo Seeds',
             colorByPoint: true,
             data: [{
-                name: 'Microsoft Internet Explorer',
-                y: s
+                name: 'Passed',
+                y: f
             }, {
-                name: 'Chrome',
-                y: f,
-                sliced: true,
-                selected: true
-            }, {
-                name: 'Firefox',
-                y: t
+                name: 'Failed',
+                y: s        
             }]
         }]
     });
-});}
+});
 
-function chart2(){
-	var t1=23;
-	var t2=14;
-	var t3=19;
-$(function () {
-    $('#container2').highcharts({
+}
+
+function pyramid(){
+	   $('#container1').highcharts({
         chart: {
-            type: 'spline'
+            type: 'pyramid',
+            marginRight: 100
         },
         title: {
-            text: 'Monthly Average Temperature'
+            text: 'Sales pyramid',
+            x: -50
+        },
+        plotOptions: {
+            series: {
+                dataLabels: {
+                    enabled: true,
+                    format: '<b>{point.name}</b> ({point.y:,.0f})',
+                    color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',
+                    softConnector: true
+                }
+            }
+        },
+        legend: {
+            enabled: false
+        },
+        series: [{
+            name: 'Unique users',
+            data: [
+                ['Website visits',      35000],
+                ['Downloads',            65000],
+                ['Requested price list', 1987],
+                ['Invoice sent',          976],
+                ['Finalized',             846]
+            ]
+        }]
+    });
+	
+	
+	}
+
+
+function chart2(monte){
+
+
+var mySeries = [];
+
+for(i=1;i<2000;i++){
+   mySeries.push(monte[i]);
+}
+$(function () {
+    $('#container2').highcharts({
+        title: {
+            text: 'Monthly Average Temperature',
+            x: -20 //center
         },
         subtitle: {
-            text: 'CAMEL Rating: Results'
+            text: 'Source: WorldClimate.com',
+            x: -20
         },
         xAxis: {
-            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-                'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+            categories: ['Success', 'Failure']
         },
         yAxis: {
             title: {
-                text: 'Temperature'
+                text: 'Temperature (°C)'
             },
-            labels: {
-                formatter: function () {
-                    return this.value + '°';
-                }
-            }
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
         },
         tooltip: {
-            crosshairs: true,
-            shared: true
+            valueSuffix: '°C'
         },
-        plotOptions: {
-            spline: {
-                marker: {
-                    radius: 4,
-                    lineColor: '#666666',
-                    lineWidth: 1
-                }
-            }
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
         },
         series: [{
             name: 'Tokyo',
-            marker: {
-                symbol: 'square'
-            },
-            data: [{
-                y: 3.9,
-                marker: {
-                    symbol: 'url(https://www.highcharts.com/samples/graphics/snow.png)'
-                }
-            }, t3, 4, 6, 8, 10, t2, 18, t1, 8, 6, 4.2]
+            data: mySeries
         }]
     });
 });
+
 }
+
+
+
+function cameldepict(){
+	
+	
+	
+	
+var x=3;
+var y=1.2;
+var z=4;
+var k=1;
+var w =3;
+$(function () {
+    $('#container3').highcharts({
+        chart: {
+            type: 'column',
+            options3d: {
+                enabled: true,
+                alpha: 10,
+                beta: 25,
+                depth: 70
+            }
+        },
+        title: {
+            text: '3D chart with null values'
+        },
+        subtitle: {
+            text: 'Notice the difference between a 0 value and a null point'
+        },
+        plotOptions: {
+            column: {
+                depth: 25
+            }
+        },
+        xAxis: {
+            categories: Highcharts.getOptions().lang.shortMonths
+        },
+        yAxis: {
+            title: {
+                text: null
+            }
+        },
+        series: [{
+            name: 'Sales',
+            data: [1,x,1,y,1,z,1,w,1,k]
+        }]
+    });
+});
+	
+	
+	
+	
+	
+	
+	
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
