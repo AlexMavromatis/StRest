@@ -71,15 +71,15 @@
 
 //Calculating tiers of bank and Camel ratings 
 
-	   Tier1     =   ((ShareHequity+RetainedEarnings)/RiskWassets)*100;
-	   Tier2	 =   (TotalCapital/RiskWassets)*100;
+	   Tier1     =   ((ShareHequity+RetainedEarnings)/RiskWassets)*10;
+	   Tier2	 =   (TotalCapital/RiskWassets)*10;
 	   TotalTier =   Tier1+Tier2;   
 	   CAR       =   (TotalCapital/TotalAssets)*100;
 	   AQE		 =	 (NPL/TotalLoans)*100;
 	   AQE2 	 =   (NPL/TotalEquityShares)*100;
 	   ASQ		 =    AQE + AQE2;
 	   
-	   alert(TotalTier);
+	   
 	   if (TotalTier > 8){
 		   StressPass.value= "Passed"
 	   }else{
@@ -333,12 +333,12 @@ function MonteCarlo(){
 	   var seed;
 	   var DAlambert;
 	   var ProbabilityOfsuccess;
+	   var passed=false;
 	   
-	   Tier1     =   ((ShareHequity+RetainedEarnings)/RiskWassets)*100;
-	   Tier2	 =   (TotalCapital/RiskWassets)*100;
+	   Tier1     =   ((ShareHequity+RetainedEarnings)/RiskWassets)*10;
+	   Tier2	 =   (TotalCapital/RiskWassets)*10;
 	   TotalTier =   Tier1+Tier2; 
-	 
-	 
+		
 	   if (TotalTier<8){
 	       
 	       StressSuccessProb.value="0%"
@@ -393,50 +393,66 @@ function MonteCarlo(){
 		  
 	  }
 		 
-		 
-      if(c>50000 && TotalTier>8){
+		
+      if(c>50000 && TotalTier>=8){
 		  
 		  ProbabilityOfsuccess=70;
-		  
-	  }else if(c>50000 && TotalTier >=10){
+		  passed=true;
+
+	  } if(c>50000 && TotalTier >=14){
 		  
 		  ProbabilityOfsuccess=78;
-	  
-	  }else if(c>60000 && TotalTier>8){
+		  passed=true;
+	  } if(c>60000 && TotalTier>=8){
 		  
 		  ProbabilityOfsuccess=85;
-	  
-	  }else if(c>60000 && TotalTier>=10){
+	  	  passed=true;
+	  } if(c>60000 && TotalTier>=14){
 		  
 		  ProbabilityOfsuccess=89;
-	  
-	  }else if(c>70000 && TotalTier>8){
+	      passed=true;
+	  } if(c>70000 && TotalTier>=8){
 		  
 		  ProbabilityOfsuccess=94;
-	  
-	  }else if(c>70000 && TotalTier>=10){
+	 	  passed=true;   
+	  } if(c>70000 && TotalTier>=14){
 		  
 		  ProbabilityOfsuccess=96;
-	  
-	  }else if(c>75000 && TotalTier>8){
+	  	  passed=true;
+
+	  } if(c>75000 && TotalTier>=8){
 		  
 		  ProbabilityOfsuccess=97;
-	  
-	  }else if(c>75000 && TotalTier>=10){
+	  	  passed=true;
+
+	  } if(c>75000 && TotalTier>=14){
 		  
 		  ProbabilityOfsuccess=98;
-	  
-	  }else if(c>80000 && TotalTier>8){
+	  	  passed=true;
+
+	  } if(c>80000 && TotalTier>=8){
 		  
 		  ProbabilityOfsuccess=99;
-	  
-	  }else if(c>80000 && TotalTier>10){
+	  	  passed=true;
+
+	  } if(c>80000 && TotalTier>14){
 		  
 		  ProbabilityOfsuccess=100;
+	  	  passed=true;
+  }
 	  
+	  if (passed==true){
+	 
+	      StressSuccessProb.value=ProbabilityOfsuccess + "%";
+	
+    	  StressFailureProb.value= (100-ProbabilityOfsuccess) + "%";
+	 
+	  }else 
+	  
+	  {  
+	  	  StressSuccessProb.value="Bank is At Risk Check Risk Probabilities";
+	  	  StressFailureProb.value="100%";
 	  }
-	  
-	  StressSuccessProb.value=ProbabilityOfsuccess + "%";
 	  seedswon.value=c;
 	  seedslost.value=cl;
 	  
@@ -525,6 +541,9 @@ function pyramid(){
                 }
             }
         },
+        credits: {
+            enabled: false
+        },
         legend: {
             enabled: false
         },
@@ -555,11 +574,11 @@ for(i=1;i<2000;i++){
 $(function () {
     $('#container2').highcharts({
         title: {
-            text: 'Monthly Average Temperature',
+            text: 'Monte Carlo Outcomes Ratio',
             x: -20 //center
         },
         subtitle: {
-            text: 'Source: WorldClimate.com',
+            text: 'Stress Test Simulation',
             x: -20
         },
         xAxis: {
@@ -567,16 +586,19 @@ $(function () {
         },
         yAxis: {
             title: {
-                text: 'Temperature (°C)'
+                text: 'Simulation Tier Passed'
             },
             plotLines: [{
                 value: 0,
                 width: 1,
-                color: '#808080'
+                color: 'red'
             }]
         },
+        credits: {
+            enabled: false
+        },
         tooltip: {
-            valueSuffix: '°C'
+            valueSuffix: 'Currency'
         },
         legend: {
             layout: 'vertical',
@@ -585,7 +607,7 @@ $(function () {
             borderWidth: 0
         },
         series: [{
-            name: 'Tokyo',
+            name: 'Monte Carlo Series',
             data: mySeries
         }]
     });

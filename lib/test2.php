@@ -34,9 +34,13 @@ div #container{
 }
 
 	</style>
+	
+	<script>$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})</script>
 </head>
 
-<body class="body" style="background-color:#e6fff2">	
+<body class="body" style="background-color:">	
 
  <center><div class="panel panel-primary">
 	 
@@ -66,13 +70,14 @@ div #container{
        
        General CAMEL Evaluation: <input type="text"  id="FinalCamel"  class="form-control"  readonly>
        
-       Stress Test Outcome: <input type="text"  id="StressPass"  class="form-control"  readonly>
+       Stress Test Outcome:<img src="../img/info.jpg" width=18;  data-toggle="tooltip" data-placement="top" title="This probability is a first estimation of the stress test NOT to be very reliable since it is based on the Bank Tier ratios. Please check the graphical analysis for further and more acurate results."></img> <input type="text"  id="StressPass"  class="form-control"  readonly>
        
-       Probability of Success: <input type="text"  id="StressSuccessProb"  class="form-control"  readonly>
+       Probability of Success:<img src="../img/info.jpg" width=18;  data-toggle="tooltip" data-placement="top" title="This probability is a first estimation of the stress test NOT to be very reliable since it is based on the Bank Tier ratios. Please check the graphical analysis for further and more acurate results."></img>
+  <input type="text"  id="StressSuccessProb"  class="form-control"  readonly>
       
-       Probability of Failure: <input type="text"  id="StressFailureProb"  class="form-control"  readonly>
-
-	   Max Drawdown: <input type="text"  id="Drawdown"  class="form-control"  readonly>
+       Risk Percentage:<img src="../img/info.jpg" width=18;  data-toggle="tooltip" data-placement="top" title="This probability is well analyzed below in the fourth graph. The percentage is an approximation of the real value which is comprised of multiple variables."></img>
+ <input type="text"  id="StressFailureProb"  class="form-control"  readonly> 
+	   Max Drawdown: <img src="../img/info.jpg" width=18;  data-toggle="tooltip" data-placement="top" title="This probability is the drawdown estimation of the time period of the simulation. If any then see the graphical representation below, even if the result should not be accurate provisions are suggested to be made."></img><input type="text"  id="Drawdown"  class="form-control"  readonly>
 	   
 	   <input type="hidden"  id="seedswon"  class="form-control"  readonly>
 	   <input type="hidden"  id="seedslost"  class="form-control"  readonly>
@@ -180,7 +185,7 @@ div #container{
 
 
  <div class="panel panel-warning">
-      <div class="panel-heading">Probability of Success Graphical Representation</div>
+      <div class="panel-heading">Stress Test Quantitative Risk Analysis</div>
       <div class="panel-body">    
 <div id="container5" style="height: 400px"></div></div></div>
 
