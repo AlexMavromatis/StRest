@@ -21,10 +21,11 @@ div #container{
 	
 	}
 	div #container1{
-	
 	float: right;
 	
 	}
+	
+	input { font-size: 18px; }
 	
 	#container3 {
     height: 500px; 
@@ -40,7 +41,7 @@ div #container{
 })</script>
 </head>
 
-<body class="body" style="background-color:">	
+<body class="body" style="background-color:#1F566B">	
 
  <center><div class="panel panel-primary">
 	 
@@ -161,43 +162,43 @@ div #container{
     </div></center>
 
 
- <div class="panel panel-warning">
-      <div class="panel-heading">Monte Carlo Graphical Representation Pie Chart</div>
+ <div class="panel panel-warning" >
+      <div class="panel-heading" style="background-color:#77C4E1">Monte Carlo Graphical Representation Pie Chart</div>
       <div class="panel-body"><div id="container" style="height: 400px"></div>
       <div id="container1" style="height: 400px"></div>
 </div></div>
 
     
     <div class="panel panel-warning">
-      <div class="panel-heading">Monte Carlo Methodology Graphical Representation Scatter Plot</div>
+      <div class="panel-heading" style="background-color:#77C4E1">Monte Carlo Methodology Graphical Representation Scatter Plot</div>
       <div class="panel-body"><div id="container2" style="height: 400px" ></div>
 </div></div>
     
     
  <div class="panel panel-warning">
-      <div class="panel-heading">CAMEL BANK Rating Graphical Representation</div>
+      <div class="panel-heading" style="background-color:#77C4E1">CAMEL BANK Rating Graphical Representation and Comparison with Best Ranking</div>
       <div class="panel-body"><div id="container3" style="height: 600px"></div>
   </div></div>
   
  <div class="panel panel-warning">
-      <div class="panel-heading">CAMEL BANK Rating Graphical Representation and Comparison with Best Ranking</div>
+      <div class="panel-heading" style="background-color:#77C4E1">CAMEL BANK Rating Graphical Representation</div>
       <div class="panel-body"> <div id="container4" style="height: 400px"></div></div></div>
 
 
  <div class="panel panel-warning">
-      <div class="panel-heading">Stress Test Quantitative Risk Analysis</div>
+      <div class="panel-heading" style="background-color:#77C4E1">Stress Test Quantitative Risk Analysis</div>
       <div class="panel-body">    
 <div id="container5" style="height: 400px"></div></div></div>
 
 
  <div class="panel panel-warning">
-      <div class="panel-heading">Probability of Failure Graphical Representation</div>
+      <div class="panel-heading" style="background-color:#77C4E1" >Probability of Failure Graphical Representation</div>
       <div class="panel-body">    
 <div id="container6" style="height: 400px"></div></div></div>
 
 
  <div class="panel panel-warning">
-      <div class="panel-heading">Drawdown of Assets Graphical Representation</div>
+      <div class="panel-heading" style="background-color:#77C4E1" >Drawdown of Assets Graphical Representation</div>
       <div class="panel-body">    
 <div id="container7" style="height: 400px"></div></div></div>
 

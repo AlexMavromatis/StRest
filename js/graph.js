@@ -16,6 +16,7 @@
 			chart2(monte);
 			pyramid();
 			cameldepict();
+			simpleCamel();
 			}
             if(e.message){
                waitingDialog.message(e.message)
@@ -522,13 +523,20 @@ function MonteCarlo(){
 }
 
 function pyramid(){
+	
+	    var f    = parseInt(document.getElementById("seedswon").value);
+        var s    = parseInt(document.getElementById("seedslost").value);
+		var pcap = (f-s);
+		var fcap = (f-s)-s/2;
+		var capz = (f-s)-f/4;
+		
 	   $('#container1').highcharts({
         chart: {
             type: 'pyramid',
             marginRight: 100
         },
         title: {
-            text: 'Sales pyramid',
+            text: 'Bank in pyramid represantation',
             x: -50
         },
         plotOptions: {
@@ -548,13 +556,13 @@ function pyramid(){
             enabled: false
         },
         series: [{
-            name: 'Unique users',
+            name: 'Unique Seeds',
             data: [
-                ['Website visits',      35000],
-                ['Downloads',            65000],
-                ['Requested price list', 1987],
-                ['Invoice sent',          976],
-                ['Finalized',             846]
+                ['Seeds Passed',      		f],
+                ['Seeds Failed',            s],
+                ['Seeds Passed at Capital', pcap],
+                ['Seeds Failed at Capital', fcap],
+                ['Capitalized',             capz]
             ]
         }]
     });
@@ -671,7 +679,87 @@ $(function () {
 	
 	}
 
+function simpleCamel(){
+var cap  =  parseInt(document.getElementById("shareEquity").value);
+var ade  =  parseInt(document.getElementById("AssetQEVal").value);
+var man  =  parseInt(document.getElementById("ManagementEval").value);
+var ear  =	parseInt(document.getElementById("EarningsEval").value);
+var liq  =  parseInt(document.getElementById("LiquitidyEval").value);
 
+	
+	$(function () {
+    // Create the chart
+    $('#container4').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'CAMEL Rankings Outcome of Stress Test'
+        },
+        subtitle: {
+            text: 'Click the columns to view versions.'
+        },
+        xAxis: {
+            type: 'category'
+        },
+        yAxis: {
+            title: {
+                text: 'Total Evaluation'
+            }
+
+        },
+        legend: {
+            enabled: false
+        },
+        plotOptions: {
+            series: {
+                borderWidth: 0,
+                dataLabels: {
+                    enabled: true,
+                    format: '{point.y:.1f}%'
+                }
+            }
+        },
+
+        tooltip: {
+            headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+            pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>'
+        },
+
+        series: [{
+            name: 'CAMEL:',
+            colorByPoint: true,
+            data: [{
+                name: 'CAPITAL',
+                y: cap,
+                drilldown: 'CAPITAL'
+            }, {
+                name: 'ASSET QUALITY',
+                y: ade,
+                drilldown: 'ASSET QUALITY'
+            }, {
+                name: 'MANAGEMENT',
+                y: man,
+                drilldown: 'MANAGEMENT'
+            }, {
+                name: 'EARNINGS',
+                y: ear,
+                drilldown: 'EARNINGS'
+            }, {
+                name: 'lIQUIDITY',
+                y: liq,
+                drilldown: 'lIQUIDITY'
+            },]
+        }],
+        
+        
+    });
+});
+	
+	
+	
+	
+	}
 
 
 
