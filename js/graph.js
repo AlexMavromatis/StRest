@@ -340,6 +340,7 @@ function MonteCarlo(){
 	   var DAlambert;
 	   var ProbabilityOfsuccess;
 	   var passed=false;
+	   var MaxDrawdown;
 	   
 	   Tier1     =   ((ShareHequity+RetainedEarnings)/RiskWassets)*10;
 	   Tier2	 =   (TotalCapital/RiskWassets)*10;
@@ -459,6 +460,9 @@ function MonteCarlo(){
 	  	  StressSuccessProb.value="Bank is At Risk Check Risk Probabilities";
 	  	  StressFailureProb.value="100%";
 	  }
+	 
+	  MaxDrawdown = ((c-cl)/c)*100;
+	  Drawdown.value=Math.abs(Math.round(MaxDrawdown))+ "%";
 	  seedswon.value=c;
 	  seedslost.value=cl;
 	  
@@ -812,9 +816,6 @@ if (Sensitiviy=="Standard"){
 //Calculating risk rank below
 RiskRank= ((Sce/SimulationTime)*s)*0.001;
 
-alert(RiskRank);
-
-
 
 
 $(function () {
@@ -841,7 +842,7 @@ $(function () {
         },
         yAxis: {
             title: {
-                text: 'Simulation Period'
+                text: 'Risk Percentage'
             },
             labels: {
                 formatter: function () {
@@ -887,6 +888,7 @@ $(function () {
 function WonLost(monte){
 	var mySeriesw = [];
 	var mySeriesl = [];
+	
 for(i=1;i<5000;i++){
   if (monte[i]==1){
    mySeriesw.push(monte[i]+10000);

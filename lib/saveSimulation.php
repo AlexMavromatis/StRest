@@ -7,6 +7,7 @@ $successProb    = $_POST["StressSuccessProb"];
 $RiskPercentage = $_POST["StressFailureProb"];
 $SimScenario  	= $_POST["scenario"];
 $SimDate 		= date("F j, Y, g:i a"); 
+$SimPeriod  	= $_POST["period"];
 
 echo "Simulation Date "        .  $SimDate       .   "</br>"; 
 echo "Test Camel Evaluation "  .  $camelEVAL     .   "</br>";
