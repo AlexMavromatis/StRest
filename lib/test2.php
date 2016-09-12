@@ -92,7 +92,8 @@ div #container{
        </form>
        
        </div>
-  
+        <div id="smooth"></div>
+      
        <div class="left">
 
        Please select sensitivity Scenario:
@@ -124,8 +125,7 @@ div #container{
 	   </br>   
  
     <input type="text" id="TotalEquityShares"  class="form-control" placeholder=" Please input Total Equity Shares Amount" >            
-      
-      
+           
      </div>
       
       	    
@@ -157,7 +157,7 @@ div #container{
 	 <input type="text" id="TotalLoans"  class="form-control" placeholder="Please input Total Loans Amount:" ></br>
    
       </div>
-               <div id="smooth"></div>
+    
           
           </br>
 
