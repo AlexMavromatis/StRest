@@ -817,6 +817,66 @@ alert(RiskRank);
 
 
 
+$(function () {
+    $('#container5').highcharts({
+        chart: {
+            type: 'area'
+        },
+        title: {
+            text: 'Stress Test Quantitative Risk Analysis'
+        }, 
+        credits: {
+            enabled: false
+        },
+        subtitle: {
+            text: 'Spectrum Quantitative Risk Analysis'
+        },
+        xAxis: {
+            allowDecimals: false,
+            labels: {
+                formatter: function () {
+                    return this.value; // clean, unformatted number for year
+                }
+            }
+        },
+        yAxis: {
+            title: {
+                text: 'Simulation Period'
+            },
+            labels: {
+                formatter: function () {
+                    return this.value / 1000 + 'k';
+                }
+            }
+        },
+        tooltip: {
+            pointFormat: '{series.name} produced <b>{point.y:,.0f}</b><br/>risk in {point.x}'
+        },
+        plotOptions: {
+            area: {
+                pointStart: 0,
+                marker: {
+                    enabled: false,
+                    symbol: 'circle',
+                    radius: 2,
+                    states: {
+                        hover: {
+                            enabled: true
+                        }
+                    }
+                }
+            }
+        },
+        series: [{
+            name: 'Risk Outcome',
+            data: [RiskRank,RiskRank-(RiskRank/10),RiskRank-(RiskRank/8),RiskRank-(RiskRank/6),RiskRank-(RiskRank/4),RiskRank-(RiskRank/2),RiskRank-(RiskRank/1.5),]
+        }, {
+            name: 'Accepted Risk',
+            data: [AcceptedRisk,(AcceptedRisk-(AcceptedRisk/10)),(AcceptedRisk-(AcceptedRisk/8)),(AcceptedRisk-(AcceptedRisk/6)),(AcceptedRisk-(AcceptedRisk/4)),(AcceptedRisk-(AcceptedRisk/2)),(AcceptedRisk-(AcceptedRisk/1.5))]
+        }]
+    });
+});
+
 	
 	
 	}

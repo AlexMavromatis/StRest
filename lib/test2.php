@@ -200,11 +200,6 @@ div #container{
 <div id="container6" style="height: 400px"></div></div></div>
 
 
- <div class="panel panel-warning">
-      <div class="panel-heading" style="background-color:#77C4E1" >Drawdown of Assets Graphical Representation</div>
-      <div class="panel-body">    
-<div id="container7" style="height: 400px"></div></div></div>
-
 
 </div>
     </div>
