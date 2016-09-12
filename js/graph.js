@@ -17,6 +17,7 @@
 			pyramid();
 			cameldepict();
 			simpleCamel();
+			document.getElementById( 'smooth' ).scrollIntoView();
 			}
             if(e.message){
                waitingDialog.message(e.message)
@@ -68,8 +69,9 @@
 	   var Tier1;
 	   var Tier2;
 	   var GeneralCamel;
-
-
+	   var SimulationTime =    (document.getElementById("SimulationTime"));
+	   var Period         =    SimulationTime.options[SimulationTime.selectedIndex].text;
+	   period.value       =    Period;
 //Calculating tiers of bank and Camel ratings 
 
 	   Tier1     =   ((ShareHequity+RetainedEarnings)/RiskWassets)*10;
@@ -328,6 +330,7 @@ function MonteCarlo(){
 	   var TotalCapital      =    parseInt(document.getElementById("TotalCapital").value,10);
 	   var Scenario 		 =    document.getElementById("scenario");
 	   var Sensitiviy        =    Scenario.options[Scenario.selectedIndex].text;
+	   sce.value=Sensitiviy;
 	   var MonteCarlo = [];
 	   var Tier1;
 	   var Tier2;

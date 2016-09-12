@@ -53,35 +53,37 @@ div #container{
   <li><a href="../index" ><button class="btn btn-primary" >Go Back</button></a></li>
 </ul>
 
-      <div class="panel-heading"><center><h4>Stress Test Panel</h4></center></div>
-      <div class="panel-body">
+       <div class="panel-heading"><center><h4>Stress Test Panel</h4></center></div>
+       <div class="panel-body">
     
-      <div class="right">
+       <div class="right">
        <form method="post" action="saveSimulation.php">
 		   
        Capital Adequacy Evaluation: <input type="text" id="shareEquity" name="shareEquityEval"  class="form-control"  readonly>
       
        Asset Quality Evaluation: <input type="text" id="AssetQEVal"  class="form-control"  readonly>
             
-       Management Evaluation: <input type="text" id="ManagementEval"  class="form-control" readonly>
+       Management Evaluation:    <input type="text" id="ManagementEval"  class="form-control" readonly>
             
-       Earnings Evaluation: <input type="text"   id="EarningsEval"  class="form-control"  readonly>
+       Earnings Evaluation: 	 <input type="text"   id="EarningsEval"  class="form-control"  readonly>
        
-       Liquidity Evaluation: <input type="text"  id="LiquitidyEval"  class="form-control"  readonly>
+       Liquidity Evaluation: 	 <input type="text"  id="LiquitidyEval"  class="form-control"  readonly>
        
-       General CAMEL Evaluation: <input type="text"  id="FinalCamel"  class="form-control"  readonly>
+       General CAMEL Evaluation: <input type="text" name="FinalCamel" id="FinalCamel"  class="form-control"  readonly>
        
-       Stress Test Outcome:<img src="../img/info.jpg" width=18;  data-toggle="tooltip" data-placement="top" title="This probability is a first estimation of the stress test NOT to be very reliable since it is based on the Bank Tier ratios. Please check the graphical analysis for further and more acurate results."></img> <input type="text"  id="StressPass"  class="form-control"  readonly>
+       Stress Test Outcome:   <img src="../img/info.jpg" width=18;  data-toggle="tooltip" data-placement="top" title="This probability is a first estimation of the stress test NOT to be very reliable since it is based on the Bank Tier ratios. Please check the graphical analysis for further and more acurate results."></img> <input type="text"  name="StressPass" id="StressPass"  class="form-control"  readonly>
        
        Probability of Success:<img src="../img/info.jpg" width=18;  data-toggle="tooltip" data-placement="top" title="This probability is a first estimation of the stress test NOT to be very reliable since it is based on the Bank Tier ratios. Please check the graphical analysis for further and more acurate results."></img>
-  <input type="text"  id="StressSuccessProb"  class="form-control"  readonly>
+	   <input type="text" name="StressSuccessProb"  id="StressSuccessProb"  class="form-control"  readonly>
       
        Risk Percentage:<img src="../img/info.jpg" width=18;  data-toggle="tooltip" data-placement="top" title="This probability is well analyzed below in the fourth graph. The percentage is an approximation of the real value which is comprised of multiple variables."></img>
- <input type="text"  id="StressFailureProb"  class="form-control"  readonly> 
-	   Max Drawdown: <img src="../img/info.jpg" width=18;  data-toggle="tooltip" data-placement="top" title="This probability is the drawdown estimation of the time period of the simulation. If any then see the graphical representation below, even if the result should not be accurate provisions are suggested to be made."></img><input type="text"  id="Drawdown"  class="form-control"  readonly>
+	   <input type="text"  name="StressFailureProb" id="StressFailureProb"  class="form-control"  readonly> 
+	   Max Drawdown: <img src="../img/info.jpg" width=18;  data-toggle="tooltip" data-placement="top" title="This probability is the drawdown estimation of the time period of the simulation. If any then see the graphical representation below, even if the result should not be accurate provisions are suggested to be made."></img><input type="text" name="Drawdown" id="Drawdown"  class="form-control"  readonly>
 	   
-	   <input type="hidden"  id="seedswon"  class="form-control"  readonly>
+	   <input type="hidden"  name="seedswon" id="seedswon"  class="form-control"  readonly>
 	   <input type="hidden"  id="seedslost"  class="form-control"  readonly>
+	   <input type="hidden"  name="period" 	 id="period"  class="form-control"  readonly>
+	   <input type="hidden"  name="scenario" 	 id="sce"  class="form-control"  readonly>
 
        </br>
        <input type="submit" id="submit" class="btn btn-primary" value="Save Simulation" />
@@ -92,7 +94,7 @@ div #container{
        <div class="left">
 
        Please select sensitivity Scenario:
-       <select class="form-control" id="scenario" style="width: 300px" >
+       <select class="form-control" name="Scenario" id="scenario" style="width: 300px" >
        <option value="Standard">Standard</option>
        <option value="medium">Medium</option>
        <option value="Extreme">Extreme</option>
@@ -127,7 +129,7 @@ div #container{
       	    
      <div class="middle">
 		 Simulation Time Period:
-	<select class="form-control" id="SimulationTime" style="width: 300px" >
+	<select class="form-control" name="period" id="SimulationTime" style="width: 300px" >
        <option value="Standard">6 Months</option>
        <option value="Extreme">1 Year</option>  
        <option value="Extreme">2 Years</option>
@@ -153,7 +155,7 @@ div #container{
 	 <input type="text" id="TotalLoans"  class="form-control" placeholder="Please input Total Loans Amount:" ></br>
    
       </div>
-               
+               <div id="smooth"></div>
           
           </br>
 
