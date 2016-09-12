@@ -1,7 +1,7 @@
 
   div.panel-primary {
-    width:1400px;
-    
+    width:1450px;
+    font-family:constantia;   
     border-radius: 35px;
   }
 div.middle {
@@ -24,14 +24,14 @@ ul {
 }
 li {
     float: left;
-    margin: 0 70px;
-    font-size:2em;
+    margin: 10px 50px;
+    font-size:1.8em;
 }
 li a {
     display: block;
     color: white;
     text-align: center;
-    padding: 14px 12px;
+    padding: 12px 10px;
     text-decoration: none;
 }
 li a:hover {

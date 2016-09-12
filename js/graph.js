@@ -17,6 +17,8 @@
 			pyramid();
 			cameldepict();
 			simpleCamel();
+			RiskAssesment(monte);
+			WonLost(monte);
 			document.getElementById( 'smooth' ).scrollIntoView();
 			}
             if(e.message){
@@ -541,6 +543,8 @@ function pyramid(){
         title: {
             text: 'Bank in pyramid represantation',
             x: -50
+        }, credits: {
+            enabled: false
         },
         plotOptions: {
             series: {
@@ -591,6 +595,9 @@ $(function () {
         subtitle: {
             text: 'Stress Test Simulation',
             x: -20
+        }, 
+        credits: {
+            enabled: false
         },
         xAxis: {
             categories: ['Success', 'Failure']
@@ -653,6 +660,9 @@ $(function () {
         },
         subtitle: {
             text: 'Notice the difference between The outstanding rating and your banks current rating'
+        }, 
+        credits: {
+            enabled: false
         },
         plotOptions: {
             column: {
@@ -701,6 +711,9 @@ var liq  =  parseInt(document.getElementById("LiquitidyEval").value);
         },
         subtitle: {
             text: 'Click the columns to view versions.'
+        }, 
+        credits: {
+            enabled: false
         },
         xAxis: {
             type: 'category'
@@ -766,12 +779,133 @@ var liq  =  parseInt(document.getElementById("LiquitidyEval").value);
 
 
 
+function RiskAssesment(monte){
+	
+
+var RiskRank;
+var f         = parseInt(document.getElementById("seedswon").value);
+var s    	  = parseInt(document.getElementById("seedslost").value);
+var risk      = parseInt(document.getElementById("StressFailureProb").value);
+var Scenario  = document.getElementById("scenario");
+var Sensitiviy     =    Scenario.options[Scenario.selectedIndex].text;
+var SimulationTime =    parseInt(document.getElementById("SimulationTime").value);
+var AcceptedRisk;
+var OutComeRisk;
+
+if (Sensitiviy=="Standard"){
+		    
+		    Sce=1;
+			AcceptedRisk=300;
+			
+	   }else if(Sensitiviy=="Medium"){
+			      
+		    Sce=2;
+			AcceptedRisk=200;
+			
+	   }else if(Sensitiviy=="Extreme"){
+			        
+		    Sce=3;
+		    AcceptedRisk=100;
+		    
+}
+
+//Calculating risk rank below
+RiskRank= ((Sce/SimulationTime)*s)*0.001;
+
+alert(RiskRank);
 
 
 
 
+	
+	
+	}
 
 
+
+
+function WonLost(monte){
+	var mySeriesw = [];
+	var mySeriesl = [];
+for(i=1;i<5000;i++){
+  if (monte[i]==1){
+   mySeriesw.push(monte[i]+10000);
+   }else   mySeriesl.push(monte[i]+5000);
+   
+}
+
+	$(function () {
+    $('#container6').highcharts({
+        chart: {
+            type: 'area'
+        },
+        title: {
+            text: 'Monte Carlo Integral Acreage Aproach'
+        }, 
+        credits: {
+            enabled: false
+        },
+        subtitle: {
+            text: 'Spectrum Represantation of Shortfall Risk '
+        },
+        xAxis: {
+            allowDecimals: false,
+            labels: {
+                formatter: function () {
+                    return this.value; // clean, unformatted number for year
+                }
+            }
+        },
+        yAxis: {
+            title: {
+                text: 'Point Outcomes'
+            },
+            labels: {
+                formatter: function () {
+                    return this.value / 1000 + 'k';
+                }
+            }
+        },
+        tooltip: {
+            pointFormat: '{series.name} produced <b>{point.y:,.0f}</b><br/>warheads in {point.x}'
+        },
+        plotOptions: {
+            area: {
+                pointStart: 1,
+                marker: {
+                    enabled: false,
+                    symbol: 'circle',
+                    radius: 2,
+                    states: {
+                        hover: {
+                            enabled: true
+                        }
+                    }
+                }
+            }
+        },
+        series: [{
+            name: 'Won',
+            data:   mySeriesw
+        }, {
+            name: 'Lost',
+            data:   mySeriesl
+        }]
+    });
+});
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	}
 
 
 

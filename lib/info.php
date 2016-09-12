@@ -4,25 +4,18 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <center><h4 class="modal-title" id="myModalLabel">Information to help you with the stress test</h4></center>
+        <center><h2 class="modal-title" id="myModalLabel">Information to help you with the stress test</h2></center>
       </div>
       <div class="modal-body">
         <center>
           
-       <h2>Thank you for using this framework</h2>     
+       <h3>Thank you for using this framework</h3>     
 
           
 
-	For the monte carlo simulation 
---------------------------------------------------
-For the monte carlo simulation we need your banks Risk weightet Assets,
-the Shareholders Equity and the Retained Earnings. Please make sure to
-select the scenario in which your bank will be tested.
-
-	For the CAMEL rating system
---------------------------------------------------
-For your evaluation through the CAMEL system we need the Capital Adequacy
-the Asset Quality the and the rest 
+<h4>Please complete the form below with the values from the banks balance sheet. Select the sensitivity scenario depending on the simulation you want to see.
+The simulation period is based on the seeds that will run on the monte carlo simulations. Once the simulation is done hover over the outcomes to understand how to
+procced. The graphical represantations below are for the Monte carlo seeds, the CAMEL rating of the bank, also the drawdown and the risk management.</h4>
 
         
         </center>

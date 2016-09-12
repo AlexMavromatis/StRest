@@ -49,8 +49,9 @@ div #container{
   <li><a class="active" href="#"> <input class="btn btn-primary" type="submit" onclick="window.simple()" value="Run Simulation"></a></li>
   <li><a href="#"><button id="button"  class="btn btn-primary" >Export Monte Carlo</button></a></li>
   <li><a href="#"><button id="button2"  class="btn btn-primary" >Export CAMEL</button></a></li>
-  <li><a href="#" data-toggle="modal" data-target="#info"><button id="button2"  class="btn btn-primary" >Info</button></a></li>
+  <li><a href="../userInterface" ><button class="btn btn-primary" >My Portofolio</button></a></li>
   <li><a href="../index" ><button class="btn btn-primary" >Go Back</button></a></li>
+  <li><a href="#" data-toggle="modal" data-target="#info"><button id="button2"  class="btn btn-primary" >Info</button></a></li>
 </ul>
 
        <div class="panel-heading"><center><h4>Stress Test Panel</h4></center></div>
@@ -130,10 +131,10 @@ div #container{
      <div class="middle">
 		 Simulation Time Period:
 	<select class="form-control" name="period" id="SimulationTime" style="width: 300px" >
-       <option value="Standard">6 Months</option>
-       <option value="Extreme">1 Year</option>  
-       <option value="Extreme">2 Years</option>
-       <option value="Extreme">3 Years</option>
+       <option value="1">6 Months</option>
+       <option value="2">1 Year</option>  
+       <option value="3">2 Years</option>
+       <option value="4">3 Years</option>
        </select>
 	   </br>   
      <input type="text" id="IncomeRate"  class="form-control" placeholder="Income Growth Rate Percentage" >  </br>
