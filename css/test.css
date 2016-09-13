@@ -2,7 +2,8 @@
   div.panel-primary {
     width:1450px;
     font-family:constantia;   
-    border-radius: 35px;
+    border-radius: 10px;
+    
   }
 div.middle {
     display: block;
@@ -17,15 +18,15 @@ div.middle {
 
 ul {
     list-style-type: none;
-    margin: 0;
-    padding: 0,0,0,0;
+    margin: 0;  
     overflow: hidden;
-    background-color: #333;
+    background-color: #282C35;
+    width: 1450px
 }
 li {
     float: left;
     margin: 10px 30px;
-    font-size:1.8em;
+    font-size:1.8em; 
 }
 li a {
     display: block;
@@ -35,7 +36,7 @@ li a {
     text-decoration: none;
 }
 li a:hover {
-    background-color: #111;
+    background-color: #282C35;
 }
 
 body{

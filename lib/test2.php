@@ -41,15 +41,15 @@ div #container{
 })</script>
 </head>
 
-<body class="body" style="background-color:#1F566B">	
+<body class="body" style="background-color:#282C35">	
 
  <center><div class="panel panel-primary">
 	 
  <ul>
   <li><a class="active" href="#"> <input class="btn btn-primary" type="submit" onclick="window.simple()" value="Run Simulation"></a></li>
-  <li><a href="#"><button id="button"  class="btn btn-primary" >Export Monte Carlo</button></a></li>
-  <li><a href="#"><button id="button2"  class="btn btn-primary" >Export CAMEL</button></a></li>
-  <li><a href="#"><button id="button3"  class="btn btn-primary" >Export Quantitative Risk Analysis</button></a></li>
+  <li><a href="#"><button id="button"    class="btn btn-primary" >Export Monte Carlo</button></a></li>
+  <li><a href="#"><button id="button2"   class="btn btn-primary" >Export CAMEL</button></a></li>
+  <li><a href="#"><button id="button3"   class="btn btn-primary" >Export Quantitative Risk Analysis</button></a></li>
   <li><a href="/lib/userInterface" ><button class="btn btn-primary" >My Portofolio</button></a></li>
   <li><a href="../index" ><button class="btn btn-primary" >Go Back</button></a></li>
   <li><a href="#" data-toggle="modal" data-target="#info"><button id="button2"  class="btn btn-primary" >Info</button></a></li>
