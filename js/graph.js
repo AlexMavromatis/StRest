@@ -1,8 +1,4 @@
 
-   
-	  
-   
-   
     window.simple=function(){
     waitingDialog.show('<center>Running Simulation</center>');
     var mocks=[{message:'Initializing Simulation..',prog:10},{message:'Monte Carlo seeds...',prog:30},{message:'Please wait..',prog:40},{prog:50},{message:'Running Monte Carlo..',prog:55},{prog:56},{prog:57},{message:'Running Monte Carlo..',prog:69},{message:'Risk Analysis..',prog:70},{message:'Risk Analysis..',prog:75},{message:'Creating Visualisation..',prog:77},{message:'Running CAMEL',prog:80},{message:'Running CAMEL',prog:99},{message:'Almost Done',prog:100}] ;
@@ -32,9 +28,7 @@
     }
     
    function CAMEL(){
-	  
-	 
-	  
+	  //Declaring Variables and user input
 	   var TotalTier;
 	   var ShareHequity      =    parseInt(document.getElementById("ShareholdersEQ").value,10);
 	   var RetainedEarnings  =    parseInt(document.getElementById("RetainedEarnigs").value,10);
@@ -92,6 +86,7 @@
 	   }
 		   
 
+//calculating below Capital ranking
 	   if (CAR <= 1.8){
 	   
 		     
@@ -126,7 +121,7 @@
 	//------------------------------------------------------------- 
 	 
 	   
-	   
+//calculating below asset quality ranking	   
 	   if (ASQ <=1 ){
 		   
 		   ASQ=1;
@@ -152,7 +147,7 @@
 	   }
 		//------------------------------------------------------------- 
 	
-	  
+//simple calculation of management ranking 
 	   if (IncomeRate <= 10){
 		  
 		   MAE=4;
@@ -173,6 +168,7 @@
 		 	//------------------------------------------------------------- 
 		
 		
+//calculating below the earnings ranking
 		
 		if ((NetinterestIncome/AvgAssetsEarnings) <= 4.5) {
 						
@@ -281,6 +277,7 @@
 		
 			//------------------------------------------------------------- 
 	
+//last camel calculation is the liquidity
 		
 		if ((TotalLoans/TotalDeposits)*100 <= 80){
 			
@@ -348,7 +345,7 @@ function MonteCarlo(){
 		
 	   if (TotalTier<8){
 	       
-	       StressSuccessProb.value="0%"
+	       StressSuccessProb.value="1%"
 	   
 	   }
 	   
@@ -385,6 +382,7 @@ function MonteCarlo(){
 	
 		   }	
 	  }
+	  
 	  var c=0;
 	  var i=0;
 	  var cl=0;
@@ -466,20 +464,16 @@ function MonteCarlo(){
 	  seedswon.value=c;
 	  seedslost.value=cl;
 	  
-	  return MonteCarlo;
+	  return MonteCarlo; //returning the monte carlo seeds to main
 	  
 } 
 	   
-	   
-	   
-	   
-	   
-	   
-	   
 
-    function chart() { 
-        var f    = parseInt(document.getElementById("seedswon").value);
-        var s    = parseInt(document.getElementById("seedslost").value);
+function chart() { 
+ 
+ 
+     var f    = parseInt(document.getElementById("seedswon").value);
+     var s    = parseInt(document.getElementById("seedslost").value);
 		
 
     $(function () {
@@ -688,13 +682,9 @@ $(function () {
     });
 });
 	
-	
-	
-	
-	
-	
-	
-	}
+}
+
+
 
 function simpleCamel(){
 var cap  =  parseInt(document.getElementById("shareEquity").value);
@@ -776,10 +766,7 @@ var liq  =  parseInt(document.getElementById("LiquitidyEval").value);
     });
 });
 	
-	
-	
-	
-	}
+}
 
 
 
@@ -815,7 +802,6 @@ if (Sensitiviy=="Standard"){
 
 //Calculating risk rank below
 RiskRank= ((Sce/SimulationTime)*s)*0.001;
-
 
 
 $(function () {
@@ -878,9 +864,7 @@ $(function () {
     });
 });
 
-	
-	
-	}
+}
 
 
 
@@ -955,20 +939,4 @@ for(i=1;i<5000;i++){
         }]
     });
 });
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	}
-
-
-
-
+}

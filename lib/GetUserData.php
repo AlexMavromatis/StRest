@@ -7,13 +7,13 @@ $userQuery = "Select * FROM bankdetails WHERE id='$uid'";
 $result    = $conn->query($userQuery);
 	
 	
-	if($result->rowCount() > 0){
+if($result->rowCount() > 0){
 		foreach ($result as $item) {
 			return $item;
 }
 
 }else
-	 return "cunt";
+	 return "Error";
 }
 
 
