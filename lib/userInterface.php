@@ -69,7 +69,7 @@
 </br></br></br></br>
       <h3 id="benefits" class="subhead">Bank Test History Interface</h3>
   
-      <div class="well">
+      <div class="well" style="width: 900px; height: 600px; overflow-y: scroll;">
         <?php 
          $result  = GetTestData($conn,$uid);
          echo '<div class="table table-hover" border="2">';
