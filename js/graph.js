@@ -455,11 +455,11 @@ function MonteCarlo(){
 	  }else 
 	  
 	  {  
-	  	  StressSuccessProb.value="Bank is At Risk Check Risk Probabilities";
+	  	  StressSuccessProb.value="Bank At Risk Check Risk Probabilities";
 	  	  StressFailureProb.value="100%";
 	  }
 	 
-	  MaxDrawdown = ((c-cl)/c)*100;
+	  MaxDrawdown = ((c-cl)/c)*10;
 	  Drawdown.value=Math.abs(Math.round(MaxDrawdown))+ "%";
 	  seedswon.value=c;
 	  seedslost.value=cl;
@@ -786,17 +786,17 @@ var OutComeRisk;
 if (Sensitiviy=="Standard"){
 		    
 		    Sce=1;
-			AcceptedRisk=300;
+			AcceptedRisk=200;
 			
 	   }else if(Sensitiviy=="Medium"){
 			      
 		    Sce=2;
-			AcceptedRisk=200;
+			AcceptedRisk=150;
 			
 	   }else if(Sensitiviy=="Extreme"){
 			        
 		    Sce=3;
-		    AcceptedRisk=100;
+		    AcceptedRisk=80;
 		    
 }
 

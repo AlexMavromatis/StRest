@@ -16,5 +16,28 @@ if($result->rowCount() > 0){
 	 return "Error";
 }
 
+function GetTestData($conn,$uid){
+
+	 $userQuery = "Select * FROM tests WHERE ID='$uid'";
+     $result    = $conn->query($userQuery);
+ 	
+	
+     return $result;
+
+} 
+
+
+function deleteTest($conn,$Tid) {
+		$userQuery = "delete from tests where TestID ='$Tid'";
+ 		$result = $conn->query($userQuery);
+
+		if (!$result) {
+			echo(mysql_error());
+			exit();
+		}
+		return $result;
+	}
+
+
 
 ?>
