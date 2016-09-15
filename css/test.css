@@ -3,7 +3,6 @@
     width:1450px;
     font-family:constantia;   
     border-radius: 10px;
-    
   }
 div.middle {
     display: block;
@@ -14,6 +13,7 @@ div.middle {
   }
   div.right{
     float: right;
+    text-align: left;
   }
 
 ul {
@@ -21,7 +21,6 @@ ul {
     margin: 0;  
     overflow: hidden;
     background-color: #282C35;
-    width: 1450px
 }
 li {
     float: left;
@@ -32,12 +31,10 @@ li a {
     display: block;
     color: white;
     text-align: center;
-    padding: 12px 10px;
+    padding: 12px 15px;
     text-decoration: none;
 }
-li a:hover {
-    background-color: #282C35;
-}
+
 
 body{
 	font-family:constantia;

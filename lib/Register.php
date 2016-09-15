@@ -17,7 +17,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand nav-link" href=../index>BsTs Bank Stress Testing Simulations</a>
+          <a class="navbar-brand nav-link" href=../home>BsTs Bank Stress Testing Simulations</a>
         </div> <!-- /.navbar-header -->
 
         <div class="collapse navbar-collapse navbar-ex1-collapse">

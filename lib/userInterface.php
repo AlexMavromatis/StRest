@@ -97,6 +97,7 @@
          echo '<th>'.$item['Period'].'</th>';
          echo '<th>'.$item['Scenario'].'</th>'; 
          echo '<th>'.'<a href="deleteTest.php?p=deletetest&id='.$item['TestID'].'" ><button class="btn btn-primary" >Delete</button></a></th>'; 
+         echo '<th>'.'<input type="button" class="btn btn-primary" value="Show Graphs">'.'</th>'; 
          echo '</tr>';
          }}
          echo '</tbody>';
