@@ -68,6 +68,7 @@ div #container{
   <li><a href="#"><button id="button3"   class="btn btn-primary" >Export Quantitative Risk Analysis</button></a></li>
   <li><a href="../lib/userInterface" ><button class="btn btn-primary" >My Portofolio</button></a></li>
   <li><a href="../home" ><button class="btn btn-primary" >Go Back</button></a></li>
+
   
 </ul>
 
@@ -101,8 +102,9 @@ div #container{
 	   
 	    <input type="hidden"  name="seedswon" id="seedswon"  class="form-control"  readonly>
 	    <input type="hidden"  id="seedslost"  class="form-control"  readonly>
-	    <input type="hidden"  name="period" 	 id="period"  class="form-control"  readonly>
+	    <input type="hidden"  name="period" 	   id="period"  class="form-control"  readonly>
 	    <input type="hidden"  name="scenario" 	 id="sce"  class="form-control"  readonly>
+      <input type="hidden"  name="testInsert"        id="testChart"  class="form-control"  readonly>
 
       </br>
       <input type="submit" id="submit" name="submit" class="btn btn-primary" value="Save Simulation" />
@@ -244,6 +246,7 @@ div #container{
   // the button handler
     $('#button3').click(function () {
         var chart = $('#container5').highcharts();
+
         chart.exportChart({
             type: 'application/pdf',
             filename: 'RiskAnalysis'
