@@ -9,7 +9,7 @@
 /**
  * Description of UserTest
  *
- * @author Alex
+ * @author Alex Mavromatis
  */
 class UserTest extends PHPUnit_Framework_TestCase {
 
@@ -20,14 +20,14 @@ class UserTest extends PHPUnit_Framework_TestCase {
 
     public function setUp() {
         $capabilities = array(\WebDriverCapabilityType::BROWSER_NAME => 'firefox');
-        $this->webDriver = RemoteWebDriver::create('http://localhost:4444/wd/hub', $capabilities);
+        $this->webDriver = RemoteWebDriver::create('http://localhost:3000/wd/hub', $capabilities);
     }
 
     public function tearDown() {
         $this->webDriver->close();
     }
 
-    protected $url = 'http://www.netbeans.org/';
+    protected $url = '/home';
 
     public function testSimple() {
         $this->webDriver->get($this->url);
