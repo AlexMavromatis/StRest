@@ -83,6 +83,7 @@
          echo '<th>Risk Percentage</th>';
          echo '<th>Simulation Period</th>';
          echo '<th>Simulation Scenario</th>';
+         echo '<th><a href="test2.php" class="btn btn-primary" >Back To Panel</a></th>';
          echo '</tr>';
          echo '</thead>';
          echo '<tbody>';
