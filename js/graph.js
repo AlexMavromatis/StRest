@@ -40,9 +40,9 @@
 	   var k = MonteCarlo[50];
 	   alert(randomnumber);
 	   if(ShareHequity<1000000){
-	   shareEquity.value= 2;
+	        shareEquity.value= 2;
 	   }else if(ShareHequity>1000000){
-		   	   shareEquity.value= 3;
+		    shareEquity.value= 3;
 
 		   
 		   

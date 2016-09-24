@@ -28,7 +28,7 @@
       <div class="panel-body">
     
       <div class="right">
-       <form method="post" action="saveSimulation.php">
+       <form method="post" action="InitTest.php">
 		   
        Capital Adequacy Evaluation: <input type="text" id="shareEquity" name="shareEquityEval"  class="form-control"  readonly></br>
       
