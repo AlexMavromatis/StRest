@@ -75,7 +75,11 @@ div #container{
        <div class="panel-heading"><h4>Stress Test Panel</h4><div style="text-align:right;" ><img src="../img/info2.png" style="position: color:#B95400;  class="btn btn-primary" data-toggle="modal" data-target="#info" width="60px" height="40px"></img></div></div>
        <div class="panel-body">
     
+<<<<<<< HEAD
+      <div class="right">
+=======
        <div class="right">
+>>>>>>> 54b19e0926ac8209a93b11c15c8036f5506f8a2a
        <form method="post" action="InitTest.php">
 		   
        Capital Adequacy Evaluation: <input type="text" id="shareEquity" name="shareEquityEval"  class="form-control"  readonly>

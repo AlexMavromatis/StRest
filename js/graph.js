@@ -128,7 +128,18 @@
 		   
 	   }else if(ASQ <=3 && ASQ > 4){
 		   
+<<<<<<< HEAD
+		   }
+	   var k = MonteCarlo[50];
+	   alert(randomnumber);
+	   if(ShareHequity<1000000){
+	        shareEquity.value= 2;
+	   }else if(ShareHequity>1000000){
+		    shareEquity.value= 3;
+
+=======
 		   ASQ=2;   
+>>>>>>> 54b19e0926ac8209a93b11c15c8036f5506f8a2a
 		   
 	   }else if(ASQ <=4 && ASQ > 5){
 		   		   
