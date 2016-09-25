@@ -22,7 +22,7 @@
           </label>
         </div>
         <button class="btn btn-lg btn-primary btn-block" type="submit" name="submit" style="width: 300px">Sign in</button>
-        <a href="Register"><h4>Create a Portofolio by clicking Here</h4></a>
+        <a href="lib/Register"><h4>Create a Portofolio by clicking Here</h4></a>
       </form>
       </center>
 

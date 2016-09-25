@@ -1,1 +1,1 @@
-# StRest
+This application is my dissertation for my bachelor degree. A Web service simulation of the bank stress tests.

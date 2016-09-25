@@ -113,10 +113,10 @@ session_start();
     <footer>
       <div class="container clearfix">
         <p class="pull-left">
-          Copyright &copy; Acme Corp 2013
+          Copyright 2016
         </p>
         <p class="pull-right">
-          a template from <a href="http://coverstrap.com">Coverstrap</a>
+          Dissertation of Alex Mavromatis
         </p>
       </div> <!-- /.container -->
     </footer>

@@ -1,6 +1,8 @@
 
   div.panel-primary {
-    width:1000px;
+    width:1450px;
+    font-family:constantia;   
+    border-radius: 10px;
   }
 div.middle {
     display: block;
@@ -11,29 +13,28 @@ div.middle {
   }
   div.right{
     float: right;
+    text-align: left;
   }
 
 ul {
     list-style-type: none;
-    margin: 0;
-    padding: 0,0,0,0;
+    margin: 0;  
     overflow: hidden;
-    background-color: #333;
+    background-color: #282C35;
 }
 li {
     float: left;
-    margin: 0 10px;
+    margin: 10px 30px;
+    font-size:1.8em; 
 }
 li a {
     display: block;
     color: white;
     text-align: center;
-    padding: 14px 12px;
+    padding: 12px 15px;
     text-decoration: none;
 }
-li a:hover {
-    background-color: #111;
-}
+
 
 body{
 	font-family:constantia;
