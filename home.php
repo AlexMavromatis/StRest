@@ -28,7 +28,7 @@ session_start();
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul class="nav navbar-nav navbar-right">
             <li><a href="#benefits" class="nav-link">Stress Tests Framework</a></li>
-            <?php  if(!isset($_SESSION['userID'])) { echo '<li><a href="lib/Register" >Create Portofolio</a></li>'; } else { echo '<li><a href="lib/UserInterface" >View Portofolio</a></li>'; }?> 
+            <?php  if(!isset($_SESSION['userID'])) { echo '<li><a href="lib/Register" >Create Portfolio</a></li>'; } else { echo '<li><a href="lib/UserInterface" >View Portfolio</a></li>'; }?> 
             <li><a href="#about" class="nav-link">About</a></li>
             <?php  if(!isset($_SESSION['userID'])) { echo '<li><a  href="#" data-toggle="modal" data-target="#login" >Sing in</a></li>'; } else { echo '<li><a  href="lib/signout" >Sing out</a></li>'; }?>
           </ul>
@@ -92,7 +92,7 @@ session_start();
           <div class="benefit-ball">
             <span class="glyphicon glyphicon-floppy-disk"></span>
           </div>
-          <h3>Data and Analysis Portofolio</h3>
+          <h3>Data and Analysis Portfolio</h3>
           <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero.</p>
         </div> <!-- /.benefit -->
       </div> <!-- /.row -->

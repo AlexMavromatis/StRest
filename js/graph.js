@@ -70,12 +70,12 @@
 	   period.value       =    Period;
 //Calculating tiers of bank and Camel ratings 
 
-	   Tier1     =   ((ShareHequity+RetainedEarnings)/RiskWassets)*10;
+	   Tier1     =   ((ShareHequity+RetainedEarnings)/RiskWassets)*5;
 	   Tier2	 =   (TotalCapital/RiskWassets)*10;
 	   TotalTier =   Tier1+Tier2;   
 	   CAR       =   (TotalCapital/TotalAssets)*100;
-	   AQE		 =	 (NPL/TotalLoans)*100;
-	   AQE2 	 =   (NPL/TotalEquityShares)*100;
+	   AQE		 =	 (NPL/TotalLoans)*10;
+	   AQE2 	 =   (NPL/TotalEquityShares)*10;
 	   ASQ		 =    AQE + AQE2;
 	   
 	   
@@ -120,21 +120,21 @@
 	   
 	//------------------------------------------------------------- 
 	 
-	   
+	  
 //calculating below asset quality ranking	   
-	   if (ASQ <=1 ){
+	   if (ASQ <=2 ){
 		   
 		   ASQ=1;
 		   
-	   }else if(ASQ <=2 && ASQ > 3){
+	   }else if(ASQ <=3 && ASQ > 4){
 		   
 		   ASQ=2;   
 		   
-	   }else if(ASQ <=3 && ASQ > 4){
+	   }else if(ASQ <=4 && ASQ > 5){
 		   		   
 		   ASQ=3;
 		  		   
-		} else if (ASQ > 4){ 
+		} else if (ASQ > 5){ 
 			  
 		   ASQ=5; 
 	
@@ -148,19 +148,19 @@
 		//------------------------------------------------------------- 
 	
 //simple calculation of management ranking 
-	   if (IncomeRate <= 10){
+	   if (IncomeRate <= 8){
 		  
 		   MAE=4;
 		   
-	   }else if (IncomeRate >10 && IncomeRate <=13){
+	   }else if (IncomeRate >8 && IncomeRate <=10){
 		  
 		   MAE=3;
 		  
-	   }else if (IncomeRate >13 && IncomeRate <= 15){
+	   }else if (IncomeRate >10 && IncomeRate <= 12){
 		  
 		   MAE=2;
 		  
-	   }else if (IncomeRate > 15){
+	   }else if (IncomeRate > 12){
 			  		
 		   MAE=1;
 			  
@@ -253,23 +253,23 @@
 				//------------------------------------------------------------- 
 			
 			
-		if ((TotalDeposits/TotalAssets)*100 <=75){
+		if ((TotalDeposits/TotalAssets)*100 <=65){
 			
 			LQE=5;
 			
-		}else if ((TotalDeposits/TotalAssets)*100 > 75 && (TotalDeposits/TotalAssets) < 85 ){
+		}else if ((TotalDeposits/TotalAssets)*100 > 65 && (TotalDeposits/TotalAssets) < 75 ){
 			
 			LQE=4;
 			
-		}else if ((TotalDeposits/TotalAssets)*100 > 85 && (TotalDeposits/TotalAssets) < 95 ){
+		}else if ((TotalDeposits/TotalAssets)*100 > 75 && (TotalDeposits/TotalAssets) < 85 ){
 			
 			LQE=3;
 			
-		}else if ((TotalDeposits/TotalAssets)*100 > 95 && (TotalDeposits/TotalAssets) < 97 ){
+		}else if ((TotalDeposits/TotalAssets)*100 > 85 && (TotalDeposits/TotalAssets) < 87 ){
 			
 			LQE=2;
 			
-		}else if ((TotalDeposits/TotalAssets)*100 > 99 ){
+		}else if ((TotalDeposits/TotalAssets)*100 > 94 ){
 			
 			LQE=1;
 			
@@ -339,10 +339,10 @@ function MonteCarlo(){
 	   var passed=false;
 	   var MaxDrawdown;
 	   
-	   Tier1     =   ((ShareHequity+RetainedEarnings)/RiskWassets)*10;
+	   Tier1     =   ((ShareHequity+RetainedEarnings)/RiskWassets)*5;
 	   Tier2	 =   (TotalCapital/RiskWassets)*10;
 	   TotalTier =   Tier1+Tier2; 
-		
+	
 	   if (TotalTier<8){
 	       
 	       StressSuccessProb.value="1%"
@@ -356,11 +356,11 @@ function MonteCarlo(){
 	   
 	   }else if(Sensitiviy=="Medium"){
 		
-		    seed = (TotalTier/60000)+0.0002;
+		    seed = (TotalTier/70000)+0.0002;
 	   
 	   }else if(Sensitiviy=="Extreme"){
 			   
-		    seed = (TotalTier/45000)+0.004;
+		    seed = (TotalTier/55000)+0.004;
 			   
 	   }
 	   

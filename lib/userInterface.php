@@ -68,13 +68,19 @@
         </div> <!-- /.benefit -->
 </br></br></br></br>
       <h3 id="benefits" class="subhead">Bank Test History Interface</h3>
+      
+      <style>
+        .table-history th, .table-history td{
+          width:12%;
+        }
+      </style>
   
-      <div class="well" style="width: 900px; height: 600px; overflow-y: scroll;">
+      <div class="well" style="width: 900px;">
         <?php 
          $result  = GetTestData($conn,$uid);
-         echo '<div class="table table-hover" border="2">';
+         echo '<div class="table table-hover table-history" border="2" style="width: 100%;">';
          echo '<table class="table">';
-         echo '<thead>';
+         echo '<thead style="display:block;">';
          echo '<tr>';
          echo '<th>Stress Test Date</th>';
          echo '<th>CAMEL Evaluation</th>';
@@ -86,7 +92,7 @@
          echo '<th><a href="test2.php" class="btn btn-primary" >Back To Panel</a></th>';
          echo '</tr>';
          echo '</thead>';
-         echo '<tbody>';
+         echo '<tbody style="display:block;overflow-y: auto;height: 500px;">';
          if($result->rowCount() > 0){
          foreach ($result as $item) {
          echo '<tr>';
