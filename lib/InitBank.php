@@ -32,7 +32,7 @@ $create = $query->execute(array(
 		":password"   => $password
 	));
 
-	header("Location: userInterface");
+	header("Location: ../home");
 	die();
 
 }else{

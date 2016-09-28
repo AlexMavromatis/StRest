@@ -128,18 +128,9 @@
 		   
 	   }else if(ASQ <=3 && ASQ > 4){
 		   
-<<<<<<< HEAD
-		   }
-	   var k = MonteCarlo[50];
-	   alert(randomnumber);
-	   if(ShareHequity<1000000){
-	        shareEquity.value= 2;
-	   }else if(ShareHequity>1000000){
-		    shareEquity.value= 3;
 
-=======
-		   ASQ=2;   
->>>>>>> 54b19e0926ac8209a93b11c15c8036f5506f8a2a
+		  ASQ=2;   
+
 		   
 	   }else if(ASQ <=4 && ASQ > 5){
 		   		   
@@ -367,11 +358,11 @@ function MonteCarlo(){
 	   
 	   }else if(Sensitiviy=="Medium"){
 		
-		    seed = (TotalTier/70000)+0.0002;
+		    seed = (TotalTier/60000)+0.0002;
 	   
 	   }else if(Sensitiviy=="Extreme"){
 			   
-		    seed = (TotalTier/55000)+0.004;
+		    seed = (TotalTier/45000)+0.004;
 			   
 	   }
 	   

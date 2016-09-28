@@ -53,7 +53,7 @@ session_start();
             <span class="glyphicon glyphicon-fire"></span>
           </div>
           <h3>Stress Test Simulations</h3>
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna.</p>
+          <p>Using this framework you can simulate bank stress tests and display full analysis.</p>
         </div> <!-- /.benefit -->
 
         <div class="col-md-4 col-sm-6 benefit">
@@ -61,7 +61,7 @@ session_start();
             <span class="glyphicon glyphicon-qrcode"></span>
           </div>
           <h3>Monte Carlo Simulations</h3>
-          <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+          <p>The Stress Testing methodology is using monte carlo simulations which are fully represented graphically.</p>
         </div> <!-- /.benefit -->
 
         <div class="col-md-4 col-sm-6 benefit">
@@ -69,7 +69,7 @@ session_start();
             <span class="glyphicon glyphicon-knight"></span>
           </div>
           <h3>CAMEL Rating System</h3>
-          <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero.</p>
+          <p>The CAMEL bank rating system is implemented for each stress test taking place. Visually represantations are also available</p>
         </div> <!-- /.benefit -->
 
         <div class="col-md-4 col-sm-6 benefit">
@@ -77,7 +77,7 @@ session_start();
             <span class="glyphicon glyphicon-stats"></span>
           </div>
           <h3>Graphical Visualitation of Stress Test</h3>
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna.</p>
+          <p>All stress tests are fully analyzed and graphically represantated through interactive graphs.</p>
         </div> <!-- /.benefit -->
 
         <div class="col-md-4 col-sm-6 benefit">
@@ -85,7 +85,7 @@ session_start();
             <span class="glyphicon glyphicon-wrench"></span>
           </div>
           <h3>Monte Carlo Experimantation Tools</h3>
-          <p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
+          <p>You can download and play around with a monte carlo tool written in python.</p>
         </div> <!-- /.benefit -->
 
         <div class="col-md-4 col-sm-6 benefit">
@@ -93,18 +93,21 @@ session_start();
             <span class="glyphicon glyphicon-floppy-disk"></span>
           </div>
           <h3>Data and Analysis Portfolio</h3>
-          <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero.</p>
+          <p>Once a bank profile is created stress test data analysis and history portfolio can be saved in your profile.</p>
         </div> <!-- /.benefit -->
       </div> <!-- /.row -->
 
 
       <div class="sect-border"></div>
 
-      <h3 id="about" class="subhead">A Little More About Us</h3>
+      <h3 id="about" class="subhead">A Little More About the framework</h3>
       <div class="row">
         <div class="col-md-10 col-md-offset-1 text-center">
-          <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna.  Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan.</p>
-          <p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius.</p>
+          <p>This web service is the dissertation of Alex Mavromatis. After research around the banking system and the banks stress testing methodology this 
+          web application was developed in order to create a simulation tool that is able to create and run a bank stress test.</p>
+          <p>Risk analysis and bank rating and evaluation is also a part of the web application. Every output is graphically represantated in order to have a
+          better solution and understandable results. Other than research and universally implementing the financial methodoligies around the bank stress test
+          field, this dissertation is proposing a different aproach and an implementation from a different perspective.</p>
         </div> <!-- /.col-md-10 -->
       </div> <!-- /.row -->
 
