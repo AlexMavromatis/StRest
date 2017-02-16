@@ -107,7 +107,7 @@ session_start();
           web application was developed in order to create a simulation tool that is able to create and run a bank stress test.</p>
           <p>Risk analysis and bank rating and evaluation is also a part of the web application. Every output is graphically represantated in order to have a
           better solution and understandable results. Other than research and universally implementing the financial methodoligies around the bank stress test
-          field, this dissertation is proposing a different aproach and an implementation from a different perspective.</p>
+          field, this dissertation is proposing a  different aproach and an implementation from a different perspective.</p>
         </div> <!-- /.col-md-10 -->
       </div> <!-- /.row -->
 
