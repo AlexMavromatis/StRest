@@ -17,8 +17,6 @@ $SimDate 		= date("F j, Y, g:i a");
 $SimPeriod  	= $_POST["period"];
 
 	
-
-
 //Initialzing test to database
 $preparetest = "INSERT INTO tests(ID,SimDate,CAMEL,Outcome,Sprob,Risk,Period,Scenario) VALUES(:uid, :SimDate, :camelEVAL, :StressTest, :successProb, :RiskPercentage, :SimPeriod, :SimScenario);";
 

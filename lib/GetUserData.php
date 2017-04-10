@@ -18,9 +18,8 @@ if($result->rowCount() > 0){
 
 function GetTestData($conn,$uid){
 
-	 $userQuery = "Select * FROM tests WHERE ID='$uid'";
+     $userQuery = "Select * FROM tests WHERE ID='$uid'";
      $result    = $conn->query($userQuery);
- 	
 	
      return $result;
 
@@ -28,14 +27,15 @@ function GetTestData($conn,$uid){
 
 
 function deleteTest($conn,$Tid) {
-		$userQuery = "delete from tests where TestID ='$Tid'";
- 		$result = $conn->query($userQuery);
+	$userQuery = "delete from tests where TestID ='$Tid'";
+ 	$result = $conn->query($userQuery);
 
-		if (!$result) {
-			echo(mysql_error());
-			exit();
-		}
-		return $result;
+	    if (!$result) {
+	        echo(mysql_error());
+		exit();
+	    }
+		
+	return $result;
 	}
 
 
